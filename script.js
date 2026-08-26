@@ -1,118 +1,217 @@
 /* =========================================
-   WHATSAPP CIRENG INDI
+   KONFIGURASI WHATSAPP
 ========================================= */
 
 const nomorWhatsApp = "6282254710903";
 
 
 /* =========================================
+   AMBIL SEMUA SLIDE & NAVIGASI
+========================================= */
+
+const slides = document.querySelectorAll(".slide");
+const navButtons = document.querySelectorAll(".nav-button");
+
+let currentSlide = 0;
+
+
+/* =========================================
+   PINDAH SLIDE
+========================================= */
+
+function goToSlide(index) {
+
+    if (index < 0 || index >= slides.length) {
+        return;
+    }
+
+    currentSlide = index;
+
+    slides.forEach((slide, i) => {
+
+        slide.classList.toggle(
+            "active",
+            i === currentSlide
+        );
+
+    });
+
+    navButtons.forEach((button, i) => {
+
+        button.classList.toggle(
+            "active",
+            i === currentSlide
+        );
+
+    });
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* =========================================
    PESAN PRODUK
 ========================================= */
 
-function pesan(namaProduk) {
+function pesanProduk(namaProduk) {
 
-    const teks =
-        "Halo Cireng Indi, saya ingin memesan:\n\n" +
-        namaProduk +
-        "\n\nMohon informasi ketersediaannya.";
+    const pesan =
+        `Halo Cireng Indi, saya ingin memesan ${namaProduk}.`;
 
     const url =
-        "https://wa.me/" +
-        nomorWhatsApp +
-        "?text=" +
-        encodeURIComponent(teks);
+        `https://wa.me/${nomorWhatsApp}?text=${encodeURIComponent(pesan)}`;
 
     window.open(url, "_blank");
 }
 
 
 /* =========================================
-   UPDATE HARGA
+   PESAN PAKET
 ========================================= */
 
-function ubahHarga(selectElement) {
+function pesanPaket(namaPaket) {
 
-    const card =
-        selectElement.closest(".product-card");
+    const pesan =
+        `Halo Cireng Indi, saya ingin menanyakan ${namaPaket}. Saya ingin mengetahui pilihan paket dan harganya.`;
 
-    if (!card) return;
+    const url =
+        `https://wa.me/${nomorWhatsApp}?text=${encodeURIComponent(pesan)}`;
 
-
-    const harga =
-        selectElement.value;
-
-    const priceElement =
-        card.querySelector(".product-price");
-
-    if (!priceElement) return;
-
-
-    priceElement.textContent =
-        "Rp" +
-        Number(harga).toLocaleString("id-ID");
+    window.open(url, "_blank");
 }
 
 
 /* =========================================
-   PESAN DENGAN PILIHAN UKURAN / VARIAN
+   DETEKSI SLIDE SAAT SCROLL
 ========================================= */
 
-function pesanProduk(button) {
+function updateActiveSlide() {
 
-    const card =
-        button.closest(".product-card");
+    let closestIndex = 0;
+    let closestDistance = Infinity;
 
-    if (!card) return;
+    slides.forEach((slide, index) => {
 
+        const rect = slide.getBoundingClientRect();
 
-    const namaElement =
-        card.querySelector(".product-name");
+        const distance =
+            Math.abs(rect.top);
 
-    const select =
-        card.querySelector("select");
+        if (distance < closestDistance) {
 
+            closestDistance = distance;
+            closestIndex = index;
 
-    const namaProduk =
-        namaElement
-            ? namaElement.textContent.trim()
-            : "Produk";
+        }
 
+    });
 
-    let pilihan = "";
+    currentSlide = closestIndex;
 
+    navButtons.forEach((button, index) => {
 
-    if (select) {
+        button.classList.toggle(
+            "active",
+            index === currentSlide
+        );
 
-        pilihan =
-            select.options[
-                select.selectedIndex
-            ].text;
-    }
-
-
-    let teks =
-        "Halo Cireng Indi, saya ingin memesan:\n\n" +
-        namaProduk;
-
-
-    if (pilihan) {
-
-        teks +=
-            "\nPilihan: " +
-            pilihan;
-    }
-
-
-    teks +=
-        "\n\nMohon informasi ketersediaannya.";
-
-
-    const url =
-        "https://wa.me/" +
-        nomorWhatsApp +
-        "?text=" +
-        encodeURIComponent(teks);
-
-
-    window.open(url, "_blank");
+    });
 }
+
+
+/* =========================================
+   SWIPE UNTUK HP
+========================================= */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+
+document.addEventListener(
+    "touchstart",
+    function (event) {
+
+        touchStartX =
+            event.changedTouches[0].screenX;
+
+    },
+    { passive: true }
+);
+
+
+document.addEventListener(
+    "touchend",
+    function (event) {
+
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+        handleSwipe();
+
+    },
+    { passive: true }
+);
+
+
+function handleSwipe() {
+
+    const swipeDistance =
+        touchEndX - touchStartX;
+
+    const minimumSwipe = 60;
+
+    if (Math.abs(swipeDistance) < minimumSwipe) {
+        return;
+    }
+
+    if (swipeDistance < 0) {
+
+        // Geser kiri
+        if (currentSlide < slides.length - 1) {
+            goToSlide(currentSlide + 1);
+        }
+
+    } else {
+
+        // Geser kanan
+        if (currentSlide > 0) {
+            goToSlide(currentSlide - 1);
+        }
+
+    }
+}
+
+
+/* =========================================
+   TOMBOL NAVIGASI
+========================================= */
+
+navButtons.forEach((button, index) => {
+
+    button.addEventListener(
+        "click",
+        function () {
+
+            goToSlide(index);
+
+        }
+    );
+
+});
+
+
+/* =========================================
+   INISIALISASI
+========================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        goToSlide(0);
+
+    }
+);
