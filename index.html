@@ -7,575 +7,505 @@
     <title>Cireng Indi</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="logo-area">
-            <div class="logo">CI</div>
-            <div class="brand">Cireng Indi</div>
-        </div>
-    </header>
+<!-- HEADER -->
+<header class="header">
+    <div class="logo">
+        <div class="logo-circle">CI</div>
+        <span>Cireng Indi</span>
+    </div>
+</header>
 
 
-    <!-- MENU -->
-    <nav class="menu">
-
-        <a href="#tentang">Tentang Kami</a>
-
-        <a href="#cireng">Cireng</a>
-
-        <a href="#jamu">Jamu</a>
-
-        <a href="#nugget">Nugget</a>
-
-        <a href="#lainnya">Lainnya</a>
-
-        <a href="#kontak">Kontak Kami</a>
-
-    </nav>
+<!-- MENU NAVIGASI -->
+<nav class="nav">
+    <a href="#tentang">Tentang Kami</a>
+    <a href="#cireng">Cireng</a>
+    <a href="#jamu">Jamu</a>
+    <a href="#nugget">Nugget</a>
+    <a href="#lainnya">Lainnya</a>
+    <a href="#kontak">Kontak Kami</a>
+</nav>
 
 
-    <!-- TENTANG KAMI -->
-    <section id="tentang" class="section">
+<main>
 
-        <h1>Tentang Kami</h1>
-
-        <p>
-            Cireng Indi merupakan usaha frozen food rumahan
-            yang menghadirkan berbagai produk makanan dengan
-            bahan berkualitas dan cita rasa yang nikmat.
-        </p>
-
-    </section>
+<!-- TENTANG KAMI -->
+<section id="tentang" class="section tentang">
+    <h1>Cireng Indi</h1>
+    <p>
+        Frozen food rumahan dengan bahan berkualitas,
+        dibuat dengan rasa yang cocok untuk keluarga.
+    </p>
+</section>
 
 
-    <!-- CIRENG -->
-    <section id="cireng" class="section">
+<!-- ================= CIReng ================= -->
+<section id="cireng" class="section">
 
-        <h1>Cireng</h1>
+    <h2>Cireng</h2>
 
-        <div class="product-grid">
+    <div class="product-grid">
 
+        <!-- CIRING ORIGINAL -->
+        <div class="product-card">
 
-            <!-- CIRENG ORIGINAL -->
-            <div class="product-card">
+            <img
+                src="images/cireng-original.jpg"
+                alt="Cireng Original"
+            >
 
-                <div class="product-image">
-                    <img src="images/cireng-original.jpg"
-                         alt="Cireng Original">
+            <div class="product-content">
+
+                <h3>Cireng Original</h3>
+
+                <p>
+                    Cireng frozen dengan rasa gurih dan renyah.
+                </p>
+
+                <label>Pilih ukuran</label>
+
+                <select onchange="ubahHarga(this)">
+                    <option value="25000">250 gram</option>
+                    <option value="30000">520 gram</option>
+                    <option value="55000">1 kg</option>
+                </select>
+
+                <div class="price">
+                    Rp25.000
                 </div>
 
-                <div class="product-info">
-
-                    <h2>Cireng Original</h2>
-
-                    <p>Cireng frozen rasa gurih dan renyah.</p>
-
-                    <label>Pilih ukuran</label>
-
-                    <select class="size-select"
-                            data-product="Cireng Original">
-
-                        <option value="250 gram|25000">
-                            250 gram
-                        </option>
-
-                        <option value="520 gram|30000">
-                            520 gram
-                        </option>
-
-                        <option value="1 kg|55000">
-                            1 kg
-                        </option>
-
-                    </select>
-
-                    <div class="price">
-                        Rp25.000
-                    </div>
-
-                    <button onclick="pesanProduk(this)">
-                        Pesan
-                    </button>
-
-                </div>
+                <button onclick="pesan('Cireng Original')">
+                    Pesan
+                </button>
 
             </div>
-
-
-            <!-- CIRENG AYAM -->
-            <div class="product-card">
-
-                <div class="product-image">
-                    <img src="images/cireng-ayam.jpg"
-                         alt="Cireng Ayam">
-                </div>
-
-                <div class="product-info">
-
-                    <h2>Cireng Ayam</h2>
-
-                    <p>Cireng dengan isian ayam gurih.</p>
-
-                    <label>Pilih ukuran</label>
-
-                    <select class="size-select"
-                            data-product="Cireng Ayam">
-
-                        <option value="250 gram|30000">
-                            250 gram
-                        </option>
-
-                        <option value="520 gram|35000">
-                            520 gram
-                        </option>
-
-                        <option value="1 kg|60000">
-                            1 kg
-                        </option>
-
-                    </select>
-
-                    <div class="price">
-                        Rp30.000
-                    </div>
-
-                    <button onclick="pesanProduk(this)">
-                        Pesan
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- CIRENG ISI -->
-            <div class="product-card">
-
-                <div class="product-image">
-                    <img src="images/cireng-isi.jpg"
-                         alt="Cireng Isi">
-                </div>
-
-                <div class="product-info">
-
-                    <h2>Cireng Isi</h2>
-
-                    <p>Isi 6 pcs, tersedia ayam pedas dan original.</p>
-
-                    <label>Pilih varian</label>
-
-                    <select class="size-select"
-                            data-product="Cireng Isi">
-
-                        <option value="Ayam Pedas|25000">
-                            Ayam Pedas
-                        </option>
-
-                        <option value="Original|25000">
-                            Original
-                        </option>
-
-                    </select>
-
-                    <div class="price">
-                        Rp25.000
-                    </div>
-
-                    <button onclick="pesanProduk(this)">
-                        Pesan
-                    </button>
-
-                </div>
-
-            </div>
-
-
         </div>
 
-    </section>
 
+        <!-- CIRING AYAM -->
+        <div class="product-card">
 
-    <!-- JAMU -->
-    <section id="jamu" class="section">
+            <img
+                src="images/cireng-ayam.jpg"
+                alt="Cireng Ayam"
+            >
 
-        <h1>Jamu</h1>
+            <div class="product-content">
 
-        <div class="product-grid">
+                <h3>Cireng Ayam</h3>
 
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Manjakani</h2>
-                    <div class="price">Rp28.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
+                <p>
+                    Cireng dengan isian ayam yang gurih.
+                </p>
+
+                <label>Pilih ukuran</label>
+
+                <select onchange="ubahHarga(this)">
+                    <option value="30000">250 gram</option>
+                    <option value="35000">520 gram</option>
+                    <option value="60000">1 kg</option>
+                </select>
+
+                <div class="price">
+                    Rp30.000
                 </div>
-            </div>
 
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Komplit</h2>
-                    <div class="price">Rp28.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
+                <button onclick="pesan('Cireng Ayam')">
+                    Pesan
+                </button>
 
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Kunyit Asam</h2>
-                    <div class="price">Rp28.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
             </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Jahe Latte</h2>
-                    <div class="price">Rp30.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Jahe Original</h2>
-                    <div class="price">Rp28.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Sari Kacang Hijau</h2>
-                    <div class="price">Rp28.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
         </div>
 
-    </section>
 
+        <!-- CIRING ISI -->
+        <div class="product-card">
 
-    <!-- NUGGET -->
-    <section id="nugget" class="section">
+            <img
+                src="images/cireng-isi.jpg"
+                alt="Cireng Isi"
+            >
 
-        <h1>Nugget</h1>
+            <div class="product-content">
 
-        <div class="product-grid">
+                <h3>Cireng Isi</h3>
 
-            <div class="product-card">
+                <p>
+                    1 pack isi 6. Tersedia ayam pedas dan original.
+                </p>
 
-                <div class="product-info">
+                <label>Pilih varian</label>
 
-                    <h2>Nugget Ayam</h2>
+                <select>
+                    <option>Ayam Pedas</option>
+                    <option>Original</option>
+                </select>
 
-                    <label>Pilih ukuran</label>
-
-                    <select class="size-select"
-                            data-product="Nugget Ayam">
-
-                        <option value="250 gram|30000">
-                            250 gram
-                        </option>
-
-                        <option value="500 gram|60000">
-                            500 gram
-                        </option>
-
-                        <option value="1 kg|120000">
-                            1 kg
-                        </option>
-
-                    </select>
-
-                    <div class="price">
-                        Rp30.000
-                    </div>
-
-                    <button onclick="pesanProduk(this)">
-                        Pesan
-                    </button>
-
+                <div class="price">
+                    Rp25.000
                 </div>
 
-            </div>
+                <button onclick="pesan('Cireng Isi')">
+                    Pesan
+                </button>
 
+            </div>
         </div>
-
-    </section>
-
-
-    <!-- LAINNYA -->
-    <section id="lainnya" class="section">
-
-        <h1>Lainnya</h1>
-
-        <div class="product-grid">
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Chicken Katsu</h2>
-                    <div class="price">Mulai Rp28.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Sempol Ayam</h2>
-                    <div class="price">Mulai Rp40.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Tahu Bakso</h2>
-                    <div class="price">Rp35.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Pempek Tenggiri</h2>
-                    <div class="price">Mulai Rp25.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Cilok</h2>
-                    <div class="price">Mulai Rp30.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Bola Ayam Keju</h2>
-                    <div class="price">Rp40.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Bitterballen</h2>
-                    <div class="price">Rp40.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Bakso Ayam</h2>
-                    <div class="price">Mulai Rp28.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Ebi Furai</h2>
-                    <div class="price">Rp40.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Baceman Frozen</h2>
-                    <div class="price">Rp35.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Ayam Ungkep</h2>
-                    <div class="price">Rp60.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Dimsum Crispy</h2>
-                    <div class="price">Rp40.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Rollade Ayam</h2>
-                    <div class="price">Rp35.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Kebab Pisang</h2>
-                    <div class="price">Rp35.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Kebab Daging</h2>
-                    <div class="price">Rp45.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Corndog</h2>
-                    <div class="price">Rp30.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Churros</h2>
-                    <div class="price">Rp30.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Kentang Goreng</h2>
-                    <div class="price">Rp25.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Frozen Mix Platter</h2>
-                    <div class="price">Rp75.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Puding Mix</h2>
-                    <div class="price">Rp20.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Salad Jelly</h2>
-                    <div class="price">Rp15.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-            <div class="product-card small">
-                <div class="product-info">
-                    <h2>Rengginang</h2>
-                    <div class="price">Rp35.000</div>
-                    <button onclick="pesanProduk(this)">Pesan</button>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- KONTAK -->
-    <section id="kontak" class="contact">
-
-        <h1>Kontak Kami</h1>
-
-        <p>
-            Pesanan dapat dilakukan melalui WhatsApp.
-        </p>
-
-        <a href="https://wa.me/628xxxxxxxxxx"
-           class="contact-button">
-            WhatsApp
-        </a>
-
-    </section>
-
-
-    <!-- FLOATING BUTTON -->
-    <div class="floating-buttons">
-
-        <a href="https://wa.me/628xxxxxxxxxx"
-           class="wa">
-            WA
-        </a>
-
-        <a href="https://instagram.com/"
-           class="ig">
-            IG
-        </a>
 
     </div>
 
+</section>
 
-    <!-- JAVASCRIPT -->
-    <script>
 
-        function pesanProduk(button) {
+<!-- ================= JAMU ================= -->
+<section id="jamu" class="section">
 
-            const card = button.closest(".product-card");
+    <h2>Jamu</h2>
 
-            const product =
-                card.querySelector("h2").innerText;
+    <div class="product-grid">
 
-            const select =
-                card.querySelector(".size-select");
+        <div class="product-card">
+            <img src="images/manjakani.jpg" alt="Manjakani">
+            <div class="product-content">
+                <h3>Manjakani</h3>
+                <p>Jamu herbal pilihan.</p>
+                <div class="price">Rp28.000</div>
+                <button onclick="pesan('Jamu Manjakani')">Pesan</button>
+            </div>
+        </div>
 
-            let detail = "";
 
-            if (select) {
+        <div class="product-card">
+            <img src="images/komplit.jpg" alt="Jamu Komplit">
+            <div class="product-content">
+                <h3>Komplit</h3>
+                <p>Jamu herbal komplit.</p>
+                <div class="price">Rp28.000</div>
+                <button onclick="pesan('Jamu Komplit')">Pesan</button>
+            </div>
+        </div>
 
-                const data =
-                    select.value.split("|");
 
-                detail =
-                    data[0] + " - Rp" +
-                    Number(data[1]).toLocaleString("id-ID");
+        <div class="product-card">
+            <img src="images/kunyit-asam.jpg" alt="Kunyit Asam">
+            <div class="product-content">
+                <h3>Kunyit Asam</h3>
+                <p>Minuman jamu kunyit asam.</p>
+                <div class="price">Rp28.000</div>
+                <button onclick="pesan('Jamu Kunyit Asam')">Pesan</button>
+            </div>
+        </div>
 
-            } else {
 
-                detail =
-                    card.querySelector(".price").innerText;
+        <div class="product-card">
+            <img src="images/jahe-latte.jpg" alt="Jahe Latte">
+            <div class="product-content">
+                <h3>Jahe Latte</h3>
+                <p>Minuman jahe dengan rasa latte.</p>
+                <div class="price">Rp30.000</div>
+                <button onclick="pesan('Jahe Latte')">Pesan</button>
+            </div>
+        </div>
 
-            }
 
-            const pesan =
-                `Halo Cireng Indi, saya ingin pesan ${product} (${detail}).`;
+        <div class="product-card">
+            <img src="images/jahe-original.jpg" alt="Jahe Original">
+            <div class="product-content">
+                <h3>Jahe Original</h3>
+                <p>Minuman jahe original.</p>
+                <div class="price">Rp28.000</div>
+                <button onclick="pesan('Jahe Original')">Pesan</button>
+            </div>
+        </div>
 
-            const nomor =
-                "628xxxxxxxxxx";
 
-            window.open(
-                `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`,
-                "_blank"
-            );
+        <div class="product-card">
+            <img src="images/sari-kacang-hijau.jpg" alt="Sari Kacang Hijau">
+            <div class="product-content">
+                <h3>Sari Kacang Hijau</h3>
+                <p>Minuman sari kacang hijau.</p>
+                <div class="price">Rp28.000</div>
+                <button onclick="pesan('Sari Kacang Hijau')">Pesan</button>
+            </div>
+        </div>
 
-        }
+    </div>
 
-    </script>
+</section>
+
+
+<!-- ================= NUGGET ================= -->
+<section id="nugget" class="section">
+
+    <h2>Nugget</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+
+            <img
+                src="images/nugget-ayam.jpg"
+                alt="Nugget Ayam"
+            >
+
+            <div class="product-content">
+
+                <h3>Nugget Ayam</h3>
+
+                <p>
+                    Nugget ayam frozen rumahan.
+                </p>
+
+                <label>Pilih ukuran</label>
+
+                <select onchange="ubahHarga(this)">
+                    <option value="30000">250 gram</option>
+                    <option value="60000">500 gram</option>
+                    <option value="120000">1 kg</option>
+                </select>
+
+                <div class="price">
+                    Rp30.000
+                </div>
+
+                <button onclick="pesan('Nugget Ayam')">
+                    Pesan
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LAINNYA ================= -->
+<section id="lainnya" class="section">
+
+    <h2>Lainnya</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="images/chicken-katsu.jpg" alt="Chicken Katsu">
+
+            <div class="product-content">
+
+                <h3>Chicken Katsu</h3>
+
+                <p>Chicken katsu frozen.</p>
+
+                <label>Pilih ukuran</label>
+
+                <select onchange="ubahHarga(this)">
+                    <option value="28000">250 gram</option>
+                    <option value="55000">500 gram</option>
+                    <option value="110000">1 kg</option>
+                </select>
+
+                <div class="price">
+                    Rp28.000
+                </div>
+
+                <button onclick="pesan('Chicken Katsu')">
+                    Pesan
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <img src="images/sempol-ayam.jpg" alt="Sempol Ayam">
+
+            <div class="product-content">
+
+                <h3>Sempol Ayam</h3>
+
+                <p>Sempol ayam frozen.</p>
+
+                <label>Pilih isi</label>
+
+                <select onchange="ubahHarga(this)">
+                    <option value="40000">Isi 30</option>
+                    <option value="60000">Isi 45</option>
+                </select>
+
+                <div class="price">
+                    Rp40.000
+                </div>
+
+                <button onclick="pesan('Sempol Ayam')">
+                    Pesan
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <img src="images/tahu-bakso.jpg" alt="Tahu Bakso">
+
+            <div class="product-content">
+
+                <h3>Tahu Bakso</h3>
+
+                <p>Tahu bakso frozen.</p>
+
+                <div class="price">
+                    Rp35.000
+                </div>
+
+                <button onclick="pesan('Tahu Bakso')">
+                    Pesan
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <img src="images/pempek.jpg" alt="Pempek Ikan Tenggiri">
+
+            <div class="product-content">
+
+                <h3>Pempek Tenggiri</h3>
+
+                <p>Pempek ikan tenggiri.</p>
+
+                <label>Pilih ukuran</label>
+
+                <select onchange="ubahHarga(this)">
+                    <option value="25000">Per box</option>
+                    <option value="55000">500 gram</option>
+                    <option value="110000">1 kg</option>
+                </select>
+
+                <div class="price">
+                    Rp25.000
+                </div>
+
+                <button onclick="pesan('Pempek Ikan Tenggiri')">
+                    Pesan
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <img src="images/cilok.jpg" alt="Cilok">
+
+            <div class="product-content">
+
+                <h3>Cilok</h3>
+
+                <p>Cilok frozen.</p>
+
+                <label>Pilih ukuran</label>
+
+                <select onchange="ubahHarga(this)">
+                    <option value="30000">520 gram</option>
+                    <option value="55000">1 kg</option>
+                </select>
+
+                <div class="price">
+                    Rp30.000
+                </div>
+
+                <button onclick="pesan('Cilok')">
+                    Pesan
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <img src="images/bola-ayam-keju.jpg" alt="Bola Ayam Keju">
+
+            <div class="product-content">
+
+                <h3>Bola Ayam Keju</h3>
+
+                <p>1 box isi 10.</p>
+
+                <div class="price">
+                    Rp40.000
+                </div>
+
+                <button onclick="pesan('Bola Ayam Keju')">
+                    Pesan
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- KONTAK -->
+<section id="kontak" class="section kontak">
+
+    <h2>Kontak Kami</h2>
+
+    <p>Pesan produk Cireng Indi melalui WhatsApp.</p>
+
+    <a
+        class="contact-button"
+        href="https://wa.me/628XXXXXXXXXX"
+        target="_blank"
+    >
+        Hubungi WhatsApp
+    </a>
+
+</section>
+
+</main>
+
+
+<!-- JAVASCRIPT -->
+<script>
+
+function ubahHarga(select) {
+
+    const card = select.closest(".product-card");
+    const harga = select.value;
+
+    const price = card.querySelector(".price");
+
+    price.textContent =
+        "Rp" + Number(harga).toLocaleString("id-ID");
+
+}
+
+
+function pesan(namaProduk) {
+
+    const nomor = "628XXXXXXXXXX";
+
+    const pesan =
+        "Halo Cireng Indi, saya ingin pesan " +
+        namaProduk;
+
+    const url =
+        "https://wa.me/" +
+        nomor +
+        "?text=" +
+        encodeURIComponent(pesan);
+
+    window.open(url, "_blank");
+
+}
+
+</script>
 
 </body>
 </html>
