@@ -782,97 +782,99 @@ a {
    BOTTOM NAVIGATION
 ========================================================= */
 
+/* =========================================================
+   TOP NAVIGATION
+========================================================= */
+
+/* =========================================================
+   TOP NAVIGATION
+========================================================= */
+
 .bottom-navigation {
-    position: fixed;
-
-    left: 50%;
-    bottom: 0;
-
-    transform: translateX(-50%);
-
-    width: 100%;
-    max-width: 480px;
-
+    position: sticky;
+    top: 0;
     z-index: 999;
 
-    background:
-        linear-gradient(
-            135deg,
-            #970606,
-            #c71414
-        );
+    width: 100%;
 
-    border-top:
-        1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
 
-    padding:
-        7px 4px
-        calc(7px + env(safe-area-inset-bottom));
+    gap: 4px;
 
-    display: grid;
+    padding: 6px 5px;
 
-    grid-template-columns: repeat(6, 1fr);
+    overflow-x: auto;
+
+    background: linear-gradient(
+        135deg,
+        #970606,
+        #c71414
+    );
 
     box-shadow:
-        0 -5px 18px rgba(75, 0, 0, 0.2);
+        0 4px 12px rgba(75, 0, 0, 0.18);
+
+    scrollbar-width: none;
+}
+
+.bottom-navigation::-webkit-scrollbar {
+    display: none;
 }
 
 .bottom-navigation a,
 .bottom-navigation button {
-    appearance: none;
+    flex: 0 0 auto;
 
-    border: 0;
+    min-width: 72px;
+    min-height: 46px;
+
+    padding: 6px 8px;
+
+    border: none;
+    border-radius: 10px;
 
     background: transparent;
 
-    color: rgba(255,255,255,0.75);
+    color: rgba(255, 255, 255, 0.8);
 
     text-decoration: none;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
 
     gap: 3px;
 
-    min-height: 54px;
-
     font-size: 9px;
-
     font-weight: 600;
+
+    white-space: nowrap;
 
     cursor: pointer;
 }
 
 .bottom-navigation .nav-icon {
-    width: 27px;
-    height: 27px;
+    width: 21px;
+    height: 21px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     border-radius: 50%;
 
-    font-size: 13px;
+    font-size: 11px;
 }
 
 .bottom-navigation .active {
-    color: white;
+    background: #f4c62b;
+    color: #7d0909;
 }
 
 .bottom-navigation .active .nav-icon {
-    background: #f4c62b;
-
     color: #7d0909;
-
-    box-shadow:
-        0 2px 8px rgba(0,0,0,0.18);
 }
 
 
