@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
-/* =========================================
+
+/* =========================
    DASAR
-========================================= */
+========================= */
 
 * {
     margin: 0;
@@ -16,435 +17,326 @@ html {
 
 body {
     font-family: 'DM Sans', sans-serif;
-    background: #e60000;
+    background: #ed0000;
     color: #222;
-    width: 100%;
-    min-height: 100vh;
     overflow-x: hidden;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button,
-select {
-    font-family: inherit;
-}
-
-
-/* =========================================
-   PEMBUNGKUS WEBSITE
-========================================= */
-
-.container {
-    width: 100%;
-    max-width: 520px;
-    margin: 0 auto;
-    padding: 0 10px;
-}
-
-
-/* =========================================
+/* =========================
    HEADER
-========================================= */
+========================= */
 
 .header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    width: 100%;
-    background: #e60000;
-    color: white;
-
-    border-bottom: 1px solid rgba(255,255,255,0.15);
+    background: #ed0000;
+    padding: 14px 16px;
 }
-
-.header-inner {
-    height: 64px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 12px;
-}
-
-
-/* LOGO */
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
-}
-
-.logo img {
-    width: 42px;
-    height: 42px;
-
-    object-fit: contain;
-    border-radius: 50%;
+    gap: 10px;
+    color: white;
 }
 
 .logo-circle {
-    width: 42px;
-    height: 42px;
+    width: 46px;
+    height: 46px;
+
+    background: #ffd400;
+    color: #d90000;
+
+    border-radius: 50%;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: #ffd400;
-    color: #b40000;
-
-    border-radius: 50%;
-
-    font-weight: 800;
-    font-size: 14px;
-}
-
-.logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 19px;
     font-weight: 700;
-    color: white;
+    font-size: 17px;
 }
 
-
-/* TOMBOL MENU */
-
-.menu-button {
-    width: 42px;
-    height: 42px;
-
-    border: none;
-    border-radius: 10px;
-
-    background: #ffd400;
-    color: #b40000;
-
+.logo span {
+    font-family: 'Playfair Display', serif;
     font-size: 22px;
     font-weight: 700;
-
-    cursor: pointer;
 }
 
 
-/* =========================================
+/* =========================
    NAVIGASI
-========================================= */
+========================= */
 
 .nav {
-    background: #b90000;
+    display: flex;
+
+    gap: 22px;
+
+    padding: 12px 16px;
+
+    background: #c90000;
 
     overflow-x: auto;
+
     white-space: nowrap;
 
     scrollbar-width: none;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
 }
 
 .nav::-webkit-scrollbar {
     display: none;
 }
 
-.nav-inner {
-    display: flex;
-    align-items: center;
-
-    gap: 4px;
-    padding: 8px 10px;
-}
-
 .nav a {
-    flex-shrink: 0;
-
-    padding: 8px 10px;
-
     color: white;
 
-    font-size: 12px;
+    text-decoration: none;
+
+    font-size: 13px;
     font-weight: 600;
 
-    border-radius: 8px;
-}
-
-.nav a:hover,
-.nav a.active {
-    background: #ffd400;
-    color: #a80000;
+    flex-shrink: 0;
 }
 
 
-/* =========================================
-   HERO
-========================================= */
-
-.hero {
-    padding: 22px 10px 28px;
-
-    text-align: center;
-
-    background:
-        radial-gradient(
-            circle at top,
-            rgba(255, 70, 70, 0.45),
-            transparent 45%
-        ),
-        linear-gradient(
-            160deg,
-            #ed0000,
-            #b90000
-        );
-
-    color: white;
-}
-
-.hero-image {
-    width: 100%;
-    height: 190px;
-
-    object-fit: cover;
-
-    border-radius: 18px;
-
-    margin-bottom: 18px;
-
-    background: #eee;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-
-    color: #ffd400;
-
-    font-size: 38px;
-    line-height: 1;
-
-    margin-bottom: 8px;
-}
-
-.hero h2 {
-    font-size: 19px;
-    font-weight: 700;
-
-    margin-bottom: 8px;
-}
-
-.hero p {
-    max-width: 390px;
-    margin: 0 auto 16px;
-
-    font-size: 13px;
-    line-height: 1.6;
-
-    color: rgba(255,255,255,0.9);
-}
-
-.hero-button {
-    display: inline-block;
-
-    padding: 11px 20px;
-
-    background: #ffd400;
-    color: #a80000;
-
-    border-radius: 30px;
-
-    font-size: 13px;
-    font-weight: 700;
-}
-
-
-/* =========================================
-   JUDUL SECTION
-========================================= */
+/* =========================
+   SECTION
+========================= */
 
 .section {
-    padding: 28px 10px;
-
-    background: #e60000;
+    padding: 28px 14px;
 }
 
-.section-title {
-    margin-bottom: 16px;
-
-    text-align: center;
-}
-
-.section-title h2 {
-    font-family: 'Playfair Display', serif;
-
+.section h2 {
     color: #ffd400;
 
-    font-size: 25px;
-}
+    font-family: 'Playfair Display', serif;
 
-.section-title p {
-    margin-top: 4px;
+    font-size: 28px;
 
-    color: rgba(255,255,255,0.8);
-
-    font-size: 11px;
+    margin-bottom: 15px;
 }
 
 
-/* =========================================
-   GRID PRODUK
-========================================= */
+/* =========================
+   TENTANG
+========================= */
+
+.tentang {
+    padding-top: 38px;
+    padding-bottom: 20px;
+}
+
+.tentang h1 {
+    color: #ffd400;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 34px;
+
+    margin-bottom: 8px;
+}
+
+.tentang p {
+    color: white;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    max-width: 500px;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
 
 .product-grid {
+
     display: grid;
 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-    gap: 7px;
+    gap: 8px;
 
     width: 100%;
 }
 
 
-/* =========================================
-   KARTU PRODUK
-========================================= */
+/* =========================
+   PRODUCT CARD
+========================= */
 
 .product-card {
-    min-width: 0;
 
     background: white;
 
-    border-radius: 10px;
+    border-radius: 13px;
 
     overflow: hidden;
 
-    box-shadow:
-        0 3px 10px rgba(0,0,0,0.12);
+    min-width: 0;
 
-    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.15);
 
     display: flex;
+
     flex-direction: column;
 }
 
 
-/* FOTO */
+/* =========================
+   FOTO PRODUK
+========================= */
 
-.product-image {
+.product-card img {
+
     width: 100%;
+
     aspect-ratio: 1 / 1;
 
     object-fit: cover;
 
-    background: #f1f1f1;
+    display: block;
+
+    background: #eeeeee;
 }
 
 
-/* AREA ISI */
+/* =========================
+   ISI PRODUK
+========================= */
 
-.product-info {
-    padding: 7px;
+.product-content {
+
+    padding: 9px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
 }
 
-.product-card h3 {
+
+/* NAMA PRODUK */
+
+.product-content h3 {
+
     font-family: 'Playfair Display', serif;
 
-    color: #b40000;
+    font-size: 15px;
 
-    font-size: 12px;
-    line-height: 1.2;
+    line-height: 1.15;
 
-    margin-bottom: 4px;
+    color: #c90000;
+
+    margin-bottom: 5px;
 }
 
-.product-card p {
-    color: #666;
+
+/* DESKRIPSI */
+
+.product-content p {
 
     font-size: 9px;
-    line-height: 1.3;
 
-    margin-bottom: 7px;
+    line-height: 1.35;
+
+    color: #666;
+
+    margin-bottom: 8px;
+
+    min-height: 25px;
 }
 
 
-/* =========================================
-   PILIHAN UKURAN
-========================================= */
+/* LABEL */
 
-.product-card label {
-    display: block;
+.product-content label {
+
+    font-size: 9px;
+
+    font-weight: 700;
 
     margin-bottom: 3px;
 
-    color: #555;
-
-    font-size: 8px;
-    font-weight: 700;
+    color: #333;
 }
 
-.product-card select {
+
+/* SELECT */
+
+.product-content select {
+
     width: 100%;
 
-    min-height: 28px;
-
-    padding: 3px 5px;
+    height: 30px;
 
     border: 1px solid #ddd;
-    border-radius: 6px;
+
+    border-radius: 7px;
 
     background: white;
 
+    padding: 0 5px;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 9px;
+
     color: #333;
-
-    font-size: 8px;
-
-    outline: none;
-}
-
-.product-card select:focus {
-    border-color: #e60000;
 }
 
 
-/* =========================================
+/* =========================
    HARGA
-========================================= */
+========================= */
 
-.product-price {
-    margin-top: 6px;
+.price {
+
+    color: #d90000;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    margin-top: 7px;
+
     margin-bottom: 7px;
-
-    color: #c40000;
-
-    font-size: 11px;
-    font-weight: 800;
 }
 
 
-/* =========================================
+/* =========================
    TOMBOL PESAN
-========================================= */
+========================= */
 
-.order-button {
+.product-content button {
+
     width: 100%;
 
-    min-height: 29px;
-
-    padding: 5px 3px;
+    min-height: 30px;
 
     border: none;
+
     border-radius: 7px;
 
-    background: #e60000;
+    background: #ed0000;
+
     color: white;
 
-    font-size: 8px;
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 10px;
+
     font-weight: 700;
 
     cursor: pointer;
@@ -452,312 +344,98 @@ select {
     transition: 0.2s;
 }
 
-.order-button:hover {
-    background: #b40000;
-}
+.product-content button:active {
 
-.order-button:active {
-    transform: scale(0.97);
-}
+    transform: scale(0.96);
 
-
-/* =========================================
-   TENTANG KAMI
-========================================= */
-
-.about {
-    padding: 30px 10px;
-
-    background: #fff7d6;
-}
-
-.about-card {
-    background: white;
-
-    padding: 17px;
-
-    border-radius: 14px;
-
-    border-left: 4px solid #ffd400;
-
-    box-shadow:
-        0 4px 15px rgba(0,0,0,0.08);
-}
-
-.about-card h2 {
-    font-family: 'Playfair Display', serif;
-
-    color: #b40000;
-
-    font-size: 23px;
-
-    margin-bottom: 9px;
-}
-
-.about-card p {
-    color: #555;
-
-    font-size: 12px;
-
-    line-height: 1.7;
+    background: #c90000;
 }
 
 
-/* =========================================
+/* =========================
    KONTAK
-========================================= */
+========================= */
 
-.contact {
-    padding: 30px 10px;
+.kontak {
 
-    background: #e60000;
+    padding-bottom: 50px;
 
-    color: white;
-}
-
-.contact-box {
     text-align: center;
 }
 
-.contact-box h2 {
-    font-family: 'Playfair Display', serif;
-
-    color: #ffd400;
-
-    font-size: 24px;
+.kontak h2 {
 
     margin-bottom: 10px;
 }
 
-.contact-box p {
-    font-size: 12px;
-    line-height: 1.7;
+.kontak p {
 
-    color: rgba(255,255,255,0.9);
+    color: white;
+
+    font-size: 13px;
 
     margin-bottom: 15px;
 }
 
+.contact-button {
 
-/* =========================================
-   GOOGLE MAPS
-========================================= */
+    display: inline-block;
 
-.map-box {
-    width: 100%;
-
-    margin-top: 18px;
-
-    border-radius: 14px;
-
-    overflow: hidden;
-
-    border: 3px solid #ffd400;
-}
-
-.map-box img {
-    width: 100%;
-
-    height: 180px;
-
-    object-fit: cover;
-}
-
-.map-button {
-    display: block;
-
-    margin-top: 8px;
-
-    padding: 10px;
-
-    background: #ffd400;
-    color: #a80000;
-
-    border-radius: 8px;
-
-    font-size: 11px;
-    font-weight: 700;
-
-    text-align: center;
-}
-
-
-/* =========================================
-   SOSIAL MEDIA
-========================================= */
-
-.social-buttons {
-    position: fixed;
-
-    right: 12px;
-    bottom: 15px;
-
-    z-index: 2000;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 8px;
-}
-
-.social-button {
-    width: 45px;
-    height: 45px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
+    background: #25d366;
 
     color: white;
 
-    font-size: 11px;
-    font-weight: 800;
+    text-decoration: none;
 
-    box-shadow:
-        0 4px 12px rgba(0,0,0,0.25);
-}
+    padding: 11px 20px;
 
-.social-wa {
-    background: #20c763;
-}
+    border-radius: 8px;
 
-.social-ig {
-    background: #d6249f;
+    font-weight: 700;
+
+    font-size: 13px;
 }
 
 
-/* =========================================
-   FOOTER
-========================================= */
-
-.footer {
-    padding: 20px 10px;
-
-    background: #980000;
-
-    color: rgba(255,255,255,0.75);
-
-    text-align: center;
-
-    font-size: 10px;
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-
-    .container {
-        max-width: 520px;
-        padding: 0 8px;
-    }
-
-    .header-inner {
-        height: 58px;
-        padding: 0 10px;
-    }
-
-    .logo-circle,
-    .logo img {
-        width: 38px;
-        height: 38px;
-    }
-
-    .logo-text {
-        font-size: 17px;
-    }
-
-    .menu-button {
-        width: 38px;
-        height: 38px;
-        font-size: 20px;
-    }
-
-    .hero {
-        padding: 18px 8px 24px;
-    }
-
-    .hero-image {
-        height: 175px;
-        border-radius: 15px;
-    }
-
-    .hero h1 {
-        font-size: 34px;
-    }
-
-    .hero h2 {
-        font-size: 17px;
-    }
-
-    .section {
-        padding: 24px 8px;
-    }
-
-    .product-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 6px;
-    }
-
-    .product-info {
-        padding: 6px;
-    }
-
-    .product-card h3 {
-        font-size: 11px;
-    }
-
-    .product-card p {
-        font-size: 8px;
-    }
-
-    .product-price {
-        font-size: 10px;
-    }
-
-    .order-button {
-        font-size: 8px;
-    }
-}
-
-
-/* =========================================
-   HP SANGAT KECIL
-========================================= */
+/* =========================
+   HP KECIL
+========================= */
 
 @media (max-width: 360px) {
 
     .product-grid {
-        gap: 4px;
+
+        gap: 6px;
     }
 
-    .product-info {
-        padding: 5px;
+    .section {
+
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
-    .product-card h3 {
-        font-size: 10px;
+    .product-content {
+
+        padding: 7px;
     }
 
-    .product-card p {
-        font-size: 7px;
+    .product-content h3 {
+
+        font-size: 14px;
     }
 
-    .product-price {
-        font-size: 9px;
+    .product-content p {
+
+        font-size: 8px;
     }
 
-    .product-card select {
-        font-size: 7px;
-        min-height: 25px;
+    .product-content select {
+
+        font-size: 8px;
     }
 
-    .order-button {
-        min-height: 26px;
-        font-size: 7px;
+    .price {
+
+        font-size: 13px;
     }
 }
