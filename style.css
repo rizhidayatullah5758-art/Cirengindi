@@ -1,9 +1,13 @@
+/* =========================================
+   FONT
+========================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 
-/* =========================
-   DASAR
-========================= */
+/* =========================================
+   RESET
+========================================= */
 
 * {
     margin: 0;
@@ -17,64 +21,165 @@ html {
 
 body {
     font-family: 'DM Sans', sans-serif;
-    background: #ed0000;
-    color: #222;
+
+    background: #f8f1e7;
+
+    color: #242424;
+
     overflow-x: hidden;
 }
 
 
-/* =========================
-   HEADER
-========================= */
+/* =========================================
+   WARNA UTAMA
+========================================= */
 
-.header {
-    background: #ed0000;
-    padding: 14px 16px;
+:root {
+    --merah: #c90000;
+    --merah-gelap: #a80000;
+    --kuning: #ffd21a;
+    --cream: #f8f1e7;
+    --putih: #ffffff;
+    --abu: #666666;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+
+    background: var(--merah);
+
+    padding: 20px 16px 22px;
+
     color: white;
 }
 
-.logo-circle {
-    width: 46px;
-    height: 46px;
 
-    background: #ffd400;
-    color: #d90000;
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* Logo sementara */
+
+.logo-placeholder {
+
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
 
     border-radius: 50%;
 
+    background: var(--kuning);
+
+    color: var(--merah);
+
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    font-weight: 700;
-    font-size: 17px;
-}
-
-.logo span {
     font-family: 'Playfair Display', serif;
-    font-size: 22px;
+
+    font-size: 21px;
+
     font-weight: 700;
+
+    border: 3px solid white;
 }
 
 
-/* =========================
-   NAVIGASI
-========================= */
+/* Nama brand */
 
-.nav {
+.brand-name h1 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 25px;
+
+    line-height: 1.1;
+
+    color: white;
+}
+
+.brand-name p {
+
+    margin-top: 4px;
+
+    font-size: 11px;
+
+    color: #ffe98a;
+}
+
+
+/* =========================================
+   TENTANG DI HEADER
+========================================= */
+
+.about-intro {
+
+    margin-top: 20px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+.about-intro h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 21px;
+
+    color: var(--kuning);
+
+    margin-bottom: 9px;
+}
+
+.about-intro p {
+
+    font-size: 12px;
+
+    line-height: 1.65;
+
+    color: white;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   NAVIGASI
+========================================= */
+
+.navigation {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
     display: flex;
 
-    gap: 22px;
+    gap: 20px;
 
-    padding: 12px 16px;
+    padding: 12px 15px;
 
-    background: #c90000;
+    background: #a90000;
 
     overflow-x: auto;
 
@@ -82,97 +187,136 @@ body {
 
     scrollbar-width: none;
 
-    position: sticky;
-    top: 0;
-
-    z-index: 100;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 }
 
-.nav::-webkit-scrollbar {
+
+/* Hilangkan scrollbar */
+
+.navigation::-webkit-scrollbar {
     display: none;
 }
 
-.nav a {
+
+/* Link navigasi */
+
+.navigation a {
+
+    flex-shrink: 0;
+
     color: white;
 
     text-decoration: none;
 
-    font-size: 13px;
+    font-size: 12px;
+
     font-weight: 600;
 
-    flex-shrink: 0;
+    transition: 0.2s;
+}
+
+.navigation a:active {
+
+    color: var(--kuning);
 }
 
 
-/* =========================
+/* =========================================
    SECTION
-========================= */
+========================================= */
 
 .section {
-    padding: 28px 14px;
+
+    padding: 30px 14px;
 }
 
-.section h2 {
-    color: #ffd400;
+
+/* =========================================
+   TENTANG
+========================================= */
+
+.about-section {
+
+    background: var(--cream);
+
+    border-bottom: 1px solid #eadfce;
+}
+
+.about-section h2 {
 
     font-family: 'Playfair Display', serif;
+
+    color: var(--merah);
+
+    font-size: 27px;
+
+    margin-bottom: 13px;
+}
+
+.about-section p {
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: #444;
+
+    margin-bottom: 11px;
+}
+
+
+/* =========================================
+   JUDUL SECTION PRODUK
+========================================= */
+
+.product-section {
+
+    background: var(--cream);
+}
+
+.section-heading {
+
+    margin-bottom: 17px;
+}
+
+.section-heading h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    color: var(--merah);
 
     font-size: 28px;
 
-    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.section-heading p {
+
+    margin-top: 4px;
+
+    font-size: 11px;
+
+    color: var(--abu);
 }
 
 
-/* =========================
-   TENTANG
-========================= */
-
-.tentang {
-    padding-top: 38px;
-    padding-bottom: 20px;
-}
-
-.tentang h1 {
-    color: #ffd400;
-
-    font-family: 'Playfair Display', serif;
-
-    font-size: 34px;
-
-    margin-bottom: 8px;
-}
-
-.tentang p {
-    color: white;
-
-    font-size: 14px;
-
-    line-height: 1.6;
-
-    max-width: 500px;
-}
-
-
-/* =========================
+/* =========================================
    PRODUCT GRID
-========================= */
+========================================= */
 
 .product-grid {
 
     display: grid;
 
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    gap: 8px;
-
-    width: 100%;
+    gap: 10px;
 }
 
 
-/* =========================
+/* =========================================
    PRODUCT CARD
-========================= */
+========================================= */
 
 .product-card {
 
@@ -182,22 +326,24 @@ body {
 
     overflow: hidden;
 
-    min-width: 0;
-
     box-shadow:
-        0 3px 10px rgba(0,0,0,0.15);
+        0 3px 12px rgba(0,0,0,0.10);
 
     display: flex;
 
     flex-direction: column;
+
+    min-width: 0;
 }
 
 
-/* =========================
+/* =========================================
    FOTO PRODUK
-========================= */
+========================================= */
 
-.product-card img {
+.product-card > img {
+
+    display: block;
 
     width: 100%;
 
@@ -205,19 +351,17 @@ body {
 
     object-fit: cover;
 
-    display: block;
-
-    background: #eeeeee;
+    background: #e9e9e9;
 }
 
 
-/* =========================
-   ISI PRODUK
-========================= */
+/* =========================================
+   INFORMASI PRODUK
+========================================= */
 
-.product-content {
+.product-info {
 
-    padding: 9px;
+    padding: 10px;
 
     display: flex;
 
@@ -227,185 +371,243 @@ body {
 }
 
 
-/* NAMA PRODUK */
+/* Nama */
 
-.product-content h3 {
+.product-info h3 {
 
     font-family: 'Playfair Display', serif;
 
     font-size: 15px;
 
-    line-height: 1.15;
+    line-height: 1.2;
 
-    color: #c90000;
+    color: var(--merah);
 
     margin-bottom: 5px;
 }
 
 
-/* DESKRIPSI */
+/* Deskripsi */
 
-.product-content p {
-
-    font-size: 9px;
-
-    line-height: 1.35;
-
-    color: #666;
-
-    margin-bottom: 8px;
-
-    min-height: 25px;
-}
-
-
-/* LABEL */
-
-.product-content label {
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    margin-bottom: 3px;
-
-    color: #333;
-}
-
-
-/* SELECT */
-
-.product-content select {
-
-    width: 100%;
-
-    height: 30px;
-
-    border: 1px solid #ddd;
-
-    border-radius: 7px;
-
-    background: white;
-
-    padding: 0 5px;
-
-    font-family: 'DM Sans', sans-serif;
-
-    font-size: 9px;
-
-    color: #333;
-}
-
-
-/* =========================
-   HARGA
-========================= */
-
-.price {
-
-    color: #d90000;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    margin-top: 7px;
-
-    margin-bottom: 7px;
-}
-
-
-/* =========================
-   TOMBOL PESAN
-========================= */
-
-.product-content button {
-
-    width: 100%;
-
-    min-height: 30px;
-
-    border: none;
-
-    border-radius: 7px;
-
-    background: #ed0000;
-
-    color: white;
-
-    font-family: 'DM Sans', sans-serif;
+.product-info p {
 
     font-size: 10px;
 
-    font-weight: 700;
+    line-height: 1.45;
 
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-.product-content button:active {
-
-    transform: scale(0.96);
-
-    background: #c90000;
-}
-
-
-/* =========================
-   KONTAK
-========================= */
-
-.kontak {
-
-    padding-bottom: 50px;
-
-    text-align: center;
-}
-
-.kontak h2 {
+    color: #666;
 
     margin-bottom: 10px;
 }
 
-.kontak p {
+
+/* =========================================
+   TOMBOL PESAN
+========================================= */
+
+.product-info button {
+
+    margin-top: auto;
+
+    width: 100%;
+
+    min-height: 34px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: var(--merah);
 
     color: white;
 
-    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
 
-    margin-bottom: 15px;
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
 }
 
-.contact-button {
+.product-info button:active {
 
-    display: inline-block;
+    background: var(--merah-gelap);
 
-    background: #25d366;
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   KONTAK
+========================================= */
+
+.contact-section {
+
+    background: var(--merah);
+
+    color: white;
+}
+
+.contact-section h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 28px;
+
+    color: var(--kuning);
+
+    margin-bottom: 7px;
+}
+
+.contact-section > p {
+
+    font-size: 12px;
+
+    margin-bottom: 20px;
+
+    color: #fff2c4;
+}
+
+
+/* =========================================
+   INFORMASI KONTAK
+========================================= */
+
+.contact-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    font-size: 12px;
+}
+
+.contact-info strong {
+
+    display: block;
+
+    color: var(--kuning);
+
+    font-size: 13px;
+
+    margin-top: 8px;
+}
+
+.contact-info a {
 
     color: white;
 
     text-decoration: none;
 
-    padding: 11px 20px;
+    font-weight: 600;
+}
 
-    border-radius: 8px;
+.contact-info p {
 
-    font-weight: 700;
-
-    font-size: 13px;
+    line-height: 1.5;
 }
 
 
-/* =========================
+/* =========================================
+   GOOGLE MAPS
+========================================= */
+
+.maps-card {
+
+    display: block;
+
+    position: relative;
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    background: #ddd;
+}
+
+
+/* Foto Maps */
+
+.maps-card img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: cover;
+}
+
+
+/* Tulisan di atas foto */
+
+.maps-overlay {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 12px;
+
+    background: rgba(0,0,0,0.68);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+    padding: 22px 15px;
+
+    text-align: center;
+
+    background: #8f0000;
+
+    color: #ffe98a;
+}
+
+.footer p {
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
    HP KECIL
-========================= */
+========================================= */
 
 @media (max-width: 360px) {
 
-    .product-grid {
+    .header {
 
-        gap: 6px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
 
     .section {
@@ -414,28 +616,30 @@ body {
         padding-right: 10px;
     }
 
-    .product-content {
+    .product-grid {
 
-        padding: 7px;
+        gap: 7px;
     }
 
-    .product-content h3 {
+    .product-info {
+
+        padding: 8px;
+    }
+
+    .product-info h3 {
 
         font-size: 14px;
     }
 
-    .product-content p {
+    .product-info p {
 
-        font-size: 8px;
+        font-size: 9px;
     }
 
-    .product-content select {
+    .product-info button {
 
-        font-size: 8px;
-    }
+        min-height: 32px;
 
-    .price {
-
-        font-size: 13px;
+        font-size: 10px;
     }
 }
