@@ -1,260 +1,118 @@
-const products = [
-  {
-    name: "Chicken Katsu",
-    options: [
-      ["1 kg", 110000],
-      ["500 gr", 55000],
-      ["250 gr", 28000]
-    ]
-  },
-  {
-    name: "Nugget Ayam",
-    options: [
-      ["1 kg", 120000],
-      ["500 gr", 60000],
-      ["250 gr", 30000]
-    ]
-  },
-  {
-    name: "Sempol Ayam",
-    options: [
-      ["Isi 30", 40000],
-      ["Isi 45", 60000]
-    ]
-  },
-  {
-    name: "Tahu Bakso",
-    options: [
-      ["Isi 10", 35000]
-    ]
-  },
-  {
-    name: "Pempek Ikan Tenggiri",
-    options: [
-      ["1 kg", 110000],
-      ["500 gr", 55000],
-      ["Per box", 25000]
-    ]
-  },
-  {
-    name: "Cilok",
-    options: [
-      ["1 kg", 55000],
-      ["520 gr", 30000]
-    ]
-  },
-  {
-    name: "Cireng",
-    options: [
-      ["1 kg", 55000],
-      ["520 gr", 30000]
-    ]
-  },
-  {
-    name: "Cireng Isi",
-    options: [
-      ["1 pack isi 6 - Ayam Pedas", 25000],
-      ["1 pack isi 6 - Original", 25000]
-    ]
-  },
-  {
-    name: "Bola Ayam Keju",
-    options: [
-      ["1 box isi 10", 40000]
-    ]
-  },
-  {
-    name: "Bitterballen",
-    options: [
-      ["1 box isi 10", 40000]
-    ]
-  },
-  {
-    name: "Bakso Ayam",
-    options: [
-      ["1 pack isi 50", 55000],
-      ["1 pack isi 25", 28000]
-    ]
-  },
-  {
-    name: "Jamu",
-    options: [
-      ["Manjakani", 28000],
-      ["Komplit", 28000],
-      ["Kunyit Asam", 28000],
-      ["Jahe Latte", 30000],
-      ["Jahe Original", 28000],
-      ["Sari Kacang Hijau", 28000]
-    ]
-  },
-  {
-    name: "Ebi Furai",
-    options: [
-      ["1 box", 40000]
-    ]
-  },
-  {
-    name: "Baceman Frozen",
-    options: [
-      ["1 box", 35000]
-    ]
-  },
-  {
-    name: "Ayam Ungkep",
-    options: [
-      ["Isi 5", 60000]
-    ]
-  },
-  {
-    name: "Dimsum Crispy",
-    options: [
-      ["1 box", 40000]
-    ]
-  },
-  {
-    name: "Rollade Ayam",
-    options: [
-      ["1 box", 35000]
-    ]
-  },
-  {
-    name: "Kebab Pisang",
-    options: [
-      ["1 box", 35000]
-    ]
-  },
-  {
-    name: "Kebab Daging",
-    options: [
-      ["1 box", 45000]
-    ]
-  },
-  {
-    name: "Corndog",
-    options: [
-      ["1 box", 30000]
-    ]
-  },
-  {
-    name: "Churros",
-    options: [
-      ["1 box", 30000]
-    ]
-  },
-  {
-    name: "Kentang Goreng",
-    options: [
-      ["1 box", 25000]
-    ]
-  },
-  {
-    name: "Frozen Mix Platter",
-    options: [
-      ["1 paket", 75000]
-    ]
-  },
-  {
-    name: "Puding Mix",
-    options: [
-      ["1 paket", 20000]
-    ]
-  },
-  {
-    name: "Salad Jelly",
-    options: [
-      ["1 paket", 15000]
-    ]
-  },
-  {
-    name: "Rengginang",
-    options: [
-      ["1 paket", 35000]
-    ]
-  }
-];
+/* =========================================
+   WHATSAPP CIRENG INDI
+========================================= */
+
+const nomorWhatsApp = "6282254710903";
 
 
-function formatRupiah(number) {
-  return new Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-    maximumFractionDigits: 0
-  }).format(number);
+/* =========================================
+   PESAN PRODUK
+========================================= */
+
+function pesan(namaProduk) {
+
+    const teks =
+        "Halo Cireng Indi, saya ingin memesan:\n\n" +
+        namaProduk +
+        "\n\nMohon informasi ketersediaannya.";
+
+    const url =
+        "https://wa.me/" +
+        nomorWhatsApp +
+        "?text=" +
+        encodeURIComponent(teks);
+
+    window.open(url, "_blank");
 }
 
 
-function renderProducts() {
-  const container = document.getElementById("product-list");
+/* =========================================
+   UPDATE HARGA
+========================================= */
 
-  if (!container) return;
+function ubahHarga(selectElement) {
 
-  container.innerHTML = "";
+    const card =
+        selectElement.closest(".product-card");
 
-  products.forEach((product) => {
-
-    const card = document.createElement("div");
-    card.className = "product-card";
-
-    const title = document.createElement("h3");
-    title.textContent = product.name;
-
-    card.appendChild(title);
+    if (!card) return;
 
 
-    if (product.options.length === 1) {
+    const harga =
+        selectElement.value;
 
-      const option = product.options[0];
+    const priceElement =
+        card.querySelector(".product-price");
 
-      const description = document.createElement("p");
-      description.textContent = option[0];
+    if (!priceElement) return;
 
-      const price = document.createElement("span");
-      price.className = "product-price";
-      price.textContent = formatRupiah(option[1]);
 
-      card.appendChild(description);
-      card.appendChild(price);
+    priceElement.textContent =
+        "Rp" +
+        Number(harga).toLocaleString("id-ID");
+}
 
-    } else {
 
-      const select = document.createElement("select");
-      select.className = "product-select";
+/* =========================================
+   PESAN DENGAN PILIHAN UKURAN / VARIAN
+========================================= */
 
-      product.options.forEach((option, index) => {
+function pesanProduk(button) {
 
-        const optionElement = document.createElement("option");
+    const card =
+        button.closest(".product-card");
 
-        optionElement.value = index;
-        optionElement.textContent =
-          `${option[0]} - ${formatRupiah(option[1])}`;
+    if (!card) return;
 
-        select.appendChild(optionElement);
 
-      });
+    const namaElement =
+        card.querySelector(".product-name");
 
-      const price = document.createElement("span");
-      price.className = "product-price";
+    const select =
+        card.querySelector("select");
 
-      price.textContent =
-        formatRupiah(product.options[0][1]);
 
-      select.addEventListener("change", () => {
+    const namaProduk =
+        namaElement
+            ? namaElement.textContent.trim()
+            : "Produk";
 
-        const selected =
-          product.options[select.value];
 
-        price.textContent =
-          formatRupiah(selected[1]);
+    let pilihan = "";
 
-      });
 
-      card.appendChild(select);
-      card.appendChild(price);
+    if (select) {
+
+        pilihan =
+            select.options[
+                select.selectedIndex
+            ].text;
     }
 
-    container.appendChild(card);
-  });
+
+    let teks =
+        "Halo Cireng Indi, saya ingin memesan:\n\n" +
+        namaProduk;
+
+
+    if (pilihan) {
+
+        teks +=
+            "\nPilihan: " +
+            pilihan;
+    }
+
+
+    teks +=
+        "\n\nMohon informasi ketersediaannya.";
+
+
+    const url =
+        "https://wa.me/" +
+        nomorWhatsApp +
+        "?text=" +
+        encodeURIComponent(teks);
+
+
+    window.open(url, "_blank");
 }
-
-
-document.addEventListener("DOMContentLoaded", renderProducts);
