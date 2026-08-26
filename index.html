@@ -1,511 +1,639 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cireng Indi</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Cireng Indi | Frozen Food & Jamu</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-<!-- HEADER -->
-<header class="header">
-    <div class="logo">
-        <div class="logo-circle">CI</div>
-        <span>Cireng Indi</span>
-    </div>
-</header>
+    <!-- =========================
+         HEADER / LOGO
+    ========================== -->
+
+    <header class="header">
+
+        <div class="logo-area">
+
+            <!-- Logo sementara -->
+            <div class="logo-placeholder">
+                CI
+            </div>
+
+            <div class="brand-name">
+                <h1>Cireng Indi</h1>
+                <p>Frozen Food & Jamu</p>
+            </div>
+
+        </div>
 
 
-<!-- MENU NAVIGASI -->
-<nav class="nav">
-    <a href="#tentang">Tentang Kami</a>
-    <a href="#cireng">Cireng</a>
-    <a href="#jamu">Jamu</a>
-    <a href="#nugget">Nugget</a>
-    <a href="#lainnya">Lainnya</a>
-    <a href="#kontak">Kontak Kami</a>
-</nav>
+        <!-- Tentang Kami -->
+
+        <div class="about-intro">
+
+            <h2>Tentang Kami</h2>
+
+            <p>
+                Cireng Indi hadir sejak 2015 dengan satu
+                tujuan sederhana: menghadirkan cireng
+                dengan bahan berkualitas.
+            </p>
+
+            <p>
+                Seiring berjalannya waktu, Cireng Indi
+                terus berinovasi. Tidak hanya cireng,
+                kami juga mengembangkan berbagai produk
+                frozen food seperti Chicken Katsu,
+                Nugget, Sempol Ayam, Bola Ayam Keju,
+                dan lainnya.
+            </p>
+
+            <p>
+                Kami percaya, makanan rumahan yang dibuat
+                dengan hati akan selalu memiliki tempat
+                di hati pelanggan.
+            </p>
+
+        </div>
+
+    </header>
 
 
-<main>
 
-<!-- TENTANG KAMI -->
-<section id="tentang" class="section tentang">
-    <h1>Cireng Indi</h1>
-    <p>
-        Frozen food rumahan dengan bahan berkualitas,
-        dibuat dengan rasa yang cocok untuk keluarga.
-    </p>
-</section>
+    <!-- =========================
+         NAVIGASI
+    ========================== -->
+
+    <nav class="navigation">
+
+        <a href="#tentang">
+            Tentang Kami
+        </a>
+
+        <a href="#cireng">
+            Cireng
+        </a>
+
+        <a href="#jamu">
+            Jamu
+        </a>
+
+        <a href="#nugget">
+            Nugget
+        </a>
+
+        <a href="#lainnya">
+            Menu Lainnya
+        </a>
+
+        <a href="#kontak">
+            Kontak Kami
+        </a>
+
+    </nav>
 
 
-<!-- ================= CIReng ================= -->
-<section id="cireng" class="section">
 
-    <h2>Cireng</h2>
+    <!-- =========================
+         KONTEN UTAMA
+    ========================== -->
 
-    <div class="product-grid">
+    <main>
 
-        <!-- CIRING ORIGINAL -->
-        <div class="product-card">
 
-            <img
-                src="images/cireng-original.jpg"
-                alt="Cireng Original"
-            >
+        <!-- =====================
+             TENTANG KAMI
+        ====================== -->
 
-            <div class="product-content">
+        <section
+            id="tentang"
+            class="section about-section"
+        >
 
-                <h3>Cireng Original</h3>
+            <h2>Tentang Cireng Indi</h2>
+
+            <p>
+                Cireng Indi hadir sejak 2015 dengan satu
+                tujuan sederhana: menghadirkan cireng
+                dengan bahan berkualitas.
+            </p>
+
+            <p>
+                Seiring berjalannya waktu, Cireng Indi
+                terus berinovasi. Tidak hanya cireng,
+                kami juga mengembangkan berbagai produk
+                frozen food seperti Chicken Katsu,
+                Nugget, Sempol Ayam, Bola Ayam Keju,
+                dan lainnya.
+            </p>
+
+            <p>
+                Kami percaya, makanan rumahan yang dibuat
+                dengan hati akan selalu memiliki tempat
+                di hati pelanggan.
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================
+             CIRENG
+        ====================== -->
+
+        <section
+            id="cireng"
+            class="section product-section"
+        >
+
+            <div class="section-heading">
+
+                <h2>Cireng</h2>
 
                 <p>
-                    Cireng frozen dengan rasa gurih dan renyah.
+                    Pilihan cireng frozen Cireng Indi.
                 </p>
 
-                <label>Pilih ukuran</label>
+            </div>
 
-                <select onchange="ubahHarga(this)">
-                    <option value="25000">250 gram</option>
-                    <option value="30000">520 gram</option>
-                    <option value="55000">1 kg</option>
-                </select>
 
-                <div class="price">
-                    Rp25.000
-                </div>
+            <!--
+                Produk akan kita masukkan
+                setelah CSS selesai.
+            -->
 
-                <button onclick="pesan('Cireng Original')">
-                    Pesan
-                </button>
+            <div class="product-grid">
+
+                <!-- Produk Cireng 1 -->
+
+                <article class="product-card">
+
+                    <img
+                        src="images/cireng-original.jpg"
+                        alt="Cireng Original"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Cireng Original
+                        </h3>
+
+                        <p>
+                            Cireng frozen original.
+                        </p>
+
+                        <button>
+                            Pesan
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Produk Cireng 2 -->
+
+                <article class="product-card">
+
+                    <img
+                        src="images/cireng-ayam.jpg"
+                        alt="Cireng Ayam"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Cireng Ayam
+                        </h3>
+
+                        <p>
+                            Cireng dengan isian ayam.
+                        </p>
+
+                        <button>
+                            Pesan
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Produk Cireng 3 -->
+
+                <article class="product-card">
+
+                    <img
+                        src="images/cireng-isi.jpg"
+                        alt="Cireng Isi"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Cireng Isi
+                        </h3>
+
+                        <p>
+                            Isi 6 dengan pilihan varian.
+                        </p>
+
+                        <button>
+                            Pesan
+                        </button>
+
+                    </div>
+
+                </article>
 
             </div>
-        </div>
+
+        </section>
 
 
-        <!-- CIRING AYAM -->
-        <div class="product-card">
 
-            <img
-                src="images/cireng-ayam.jpg"
-                alt="Cireng Ayam"
-            >
+        <!-- =====================
+             JAMU
+        ====================== -->
 
-            <div class="product-content">
+        <section
+            id="jamu"
+            class="section product-section"
+        >
 
-                <h3>Cireng Ayam</h3>
+            <div class="section-heading">
+
+                <h2>Jamu</h2>
 
                 <p>
-                    Cireng dengan isian ayam yang gurih.
+                    Pilihan jamu rumahan Cireng Indi.
                 </p>
 
-                <label>Pilih ukuran</label>
+            </div>
 
-                <select onchange="ubahHarga(this)">
-                    <option value="30000">250 gram</option>
-                    <option value="35000">520 gram</option>
-                    <option value="60000">1 kg</option>
-                </select>
 
-                <div class="price">
-                    Rp30.000
-                </div>
+            <div class="product-grid">
 
-                <button onclick="pesan('Cireng Ayam')">
-                    Pesan
-                </button>
+                <article class="product-card">
+
+                    <img
+                        src="images/manjakani.jpg"
+                        alt="Jamu Manjakani"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Manjakani
+                        </h3>
+
+                        <p>
+                            Jamu Manjakani.
+                        </p>
+
+                        <button>
+                            Pesan
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="product-card">
+
+                    <img
+                        src="images/komplit.jpg"
+                        alt="Jamu Komplit"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Komplit
+                        </h3>
+
+                        <p>
+                            Jamu komplit.
+                        </p>
+
+                        <button>
+                            Pesan
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="product-card">
+
+                    <img
+                        src="images/kunyit-asam.jpg"
+                        alt="Jamu Kunyit Asam"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Kunyit Asam
+                        </h3>
+
+                        <p>
+                            Jamu kunyit asam.
+                        </p>
+
+                        <button>
+                            Pesan
+                        </button>
+
+                    </div>
+
+                </article>
 
             </div>
-        </div>
+
+        </section>
 
 
-        <!-- CIRING ISI -->
-        <div class="product-card">
 
-            <img
-                src="images/cireng-isi.jpg"
-                alt="Cireng Isi"
-            >
+        <!-- =====================
+             NUGGET
+        ====================== -->
 
-            <div class="product-content">
+        <section
+            id="nugget"
+            class="section product-section"
+        >
 
-                <h3>Cireng Isi</h3>
+            <div class="section-heading">
+
+                <h2>Nugget</h2>
 
                 <p>
-                    1 pack isi 6. Tersedia ayam pedas dan original.
+                    Frozen food ayam pilihan.
                 </p>
 
-                <label>Pilih varian</label>
+            </div>
 
-                <select>
-                    <option>Ayam Pedas</option>
-                    <option>Original</option>
-                </select>
 
-                <div class="price">
-                    Rp25.000
-                </div>
+            <div class="product-grid">
 
-                <button onclick="pesan('Cireng Isi')">
-                    Pesan
-                </button>
+                <article class="product-card">
+
+                    <img
+                        src="images/nugget-ayam.jpg"
+                        alt="Nugget Ayam"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Nugget Ayam
+                        </h3>
+
+                        <p>
+                            Nugget ayam frozen.
+                        </p>
+
+                        <button>
+                            Pesan
+                        </button>
+
+                    </div>
+
+                </article>
 
             </div>
-        </div>
 
-    </div>
-
-</section>
+        </section>
 
 
-<!-- ================= JAMU ================= -->
-<section id="jamu" class="section">
 
-    <h2>Jamu</h2>
+        <!-- =====================
+             MENU LAINNYA
+        ====================== -->
 
-    <div class="product-grid">
+        <section
+            id="lainnya"
+            class="section product-section"
+        >
 
-        <div class="product-card">
-            <img src="images/manjakani.jpg" alt="Manjakani">
-            <div class="product-content">
-                <h3>Manjakani</h3>
-                <p>Jamu herbal pilihan.</p>
-                <div class="price">Rp28.000</div>
-                <button onclick="pesan('Jamu Manjakani')">Pesan</button>
-            </div>
-        </div>
+            <div class="section-heading">
 
-
-        <div class="product-card">
-            <img src="images/komplit.jpg" alt="Jamu Komplit">
-            <div class="product-content">
-                <h3>Komplit</h3>
-                <p>Jamu herbal komplit.</p>
-                <div class="price">Rp28.000</div>
-                <button onclick="pesan('Jamu Komplit')">Pesan</button>
-            </div>
-        </div>
-
-
-        <div class="product-card">
-            <img src="images/kunyit-asam.jpg" alt="Kunyit Asam">
-            <div class="product-content">
-                <h3>Kunyit Asam</h3>
-                <p>Minuman jamu kunyit asam.</p>
-                <div class="price">Rp28.000</div>
-                <button onclick="pesan('Jamu Kunyit Asam')">Pesan</button>
-            </div>
-        </div>
-
-
-        <div class="product-card">
-            <img src="images/jahe-latte.jpg" alt="Jahe Latte">
-            <div class="product-content">
-                <h3>Jahe Latte</h3>
-                <p>Minuman jahe dengan rasa latte.</p>
-                <div class="price">Rp30.000</div>
-                <button onclick="pesan('Jahe Latte')">Pesan</button>
-            </div>
-        </div>
-
-
-        <div class="product-card">
-            <img src="images/jahe-original.jpg" alt="Jahe Original">
-            <div class="product-content">
-                <h3>Jahe Original</h3>
-                <p>Minuman jahe original.</p>
-                <div class="price">Rp28.000</div>
-                <button onclick="pesan('Jahe Original')">Pesan</button>
-            </div>
-        </div>
-
-
-        <div class="product-card">
-            <img src="images/sari-kacang-hijau.jpg" alt="Sari Kacang Hijau">
-            <div class="product-content">
-                <h3>Sari Kacang Hijau</h3>
-                <p>Minuman sari kacang hijau.</p>
-                <div class="price">Rp28.000</div>
-                <button onclick="pesan('Sari Kacang Hijau')">Pesan</button>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= NUGGET ================= -->
-<section id="nugget" class="section">
-
-    <h2>Nugget</h2>
-
-    <div class="product-grid">
-
-        <div class="product-card">
-
-            <img
-                src="images/nugget-ayam.jpg"
-                alt="Nugget Ayam"
-            >
-
-            <div class="product-content">
-
-                <h3>Nugget Ayam</h3>
+                <h2>Menu Lainnya</h2>
 
                 <p>
-                    Nugget ayam frozen rumahan.
+                    Berbagai pilihan frozen food lainnya.
                 </p>
 
-                <label>Pilih ukuran</label>
+            </div>
 
-                <select onchange="ubahHarga(this)">
-                    <option value="30000">250 gram</option>
-                    <option value="60000">500 gram</option>
-                    <option value="120000">1 kg</option>
-                </select>
 
-                <div class="price">
-                    Rp30.000
-                </div>
+            <div class="product-grid">
 
-                <button onclick="pesan('Nugget Ayam')">
-                    Pesan
-                </button>
+                <article class="product-card">
+
+                    <img
+                        src="images/chicken-katsu.jpg"
+                        alt="Chicken Katsu"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Chicken Katsu
+                        </h3>
+
+                        <p>
+                            Chicken katsu frozen.
+                        </p>
+
+                        <button>
+                            Pesan
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="product-card">
+
+                    <img
+                        src="images/sempol-ayam.jpg"
+                        alt="Sempol Ayam"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Sempol Ayam
+                        </h3>
+
+                        <p>
+                            Sempol ayam frozen.
+                        </p>
+
+                        <button>
+                            Pesan
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="product-card">
+
+                    <img
+                        src="images/tahu-bakso.jpg"
+                        alt="Tahu Bakso"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            Tahu Bakso
+                        </h3>
+
+                        <p>
+                            Tahu bakso frozen.
+                        </p>
+
+                        <button>
+                            Pesan
+                        </button>
+
+                    </div>
+
+                </article>
 
             </div>
-        </div>
 
-    </div>
-
-</section>
+        </section>
 
 
-<!-- ================= LAINNYA ================= -->
-<section id="lainnya" class="section">
 
-    <h2>Lainnya</h2>
+        <!-- =====================
+             KONTAK
+        ====================== -->
 
-    <div class="product-grid">
+        <section
+            id="kontak"
+            class="section contact-section"
+        >
 
-        <div class="product-card">
-            <img src="images/chicken-katsu.jpg" alt="Chicken Katsu">
+            <h2>Kontak Kami</h2>
 
-            <div class="product-content">
-
-                <h3>Chicken Katsu</h3>
-
-                <p>Chicken katsu frozen.</p>
-
-                <label>Pilih ukuran</label>
-
-                <select onchange="ubahHarga(this)">
-                    <option value="28000">250 gram</option>
-                    <option value="55000">500 gram</option>
-                    <option value="110000">1 kg</option>
-                </select>
-
-                <div class="price">
-                    Rp28.000
-                </div>
-
-                <button onclick="pesan('Chicken Katsu')">
-                    Pesan
-                </button>
-
-            </div>
-        </div>
+            <p>
+                Hubungi Cireng Indi untuk pemesanan.
+            </p>
 
 
-        <div class="product-card">
-            <img src="images/sempol-ayam.jpg" alt="Sempol Ayam">
+            <div class="contact-info">
 
-            <div class="product-content">
+                <p>
+                    <strong>WhatsApp</strong>
+                </p>
 
-                <h3>Sempol Ayam</h3>
+                <a href="tel:082254710903">
+                    0822 5471 0903
+                </a>
 
-                <p>Sempol ayam frozen.</p>
+                <a href="tel:081346264433">
+                    0813 4626 4433
+                </a>
 
-                <label>Pilih isi</label>
 
-                <select onchange="ubahHarga(this)">
-                    <option value="40000">Isi 30</option>
-                    <option value="60000">Isi 45</option>
-                </select>
+                <p>
+                    <strong>Jam Buka</strong>
+                </p>
 
-                <div class="price">
-                    Rp40.000
-                </div>
+                <p>
+                    10.00 - 19.30
+                </p>
 
-                <button onclick="pesan('Sempol Ayam')">
-                    Pesan
-                </button>
+
+                <p>
+                    <strong>Alamat</strong>
+                </p>
+
+                <p>
+                    Jl. Khaliluddin,
+                    Gg. Nusa Indah 4
+                </p>
+
+                <p>
+                    Jl. Piere Tendean /
+                    Pabrik Piring,
+                    Gg. Sepakat Nusa Indah 4
+                </p>
 
             </div>
-        </div>
 
 
-        <div class="product-card">
-            <img src="images/tahu-bakso.jpg" alt="Tahu Bakso">
+            <!-- GOOGLE MAPS -->
 
-            <div class="product-content">
+            <a
+                href="https://maps.app.goo.gl/2qNE6KGMzMpn4ZcU8"
+                target="_blank"
+                rel="noopener"
+                class="maps-card"
+            >
 
-                <h3>Tahu Bakso</h3>
+                <img
+                    src="images/google-maps.jpg"
+                    alt="Lokasi Cireng Indi di Google Maps"
+                >
 
-                <p>Tahu bakso frozen.</p>
+                <div class="maps-overlay">
 
-                <div class="price">
-                    Rp35.000
+                    <span>📍</span>
+
+                    <strong>
+                        Lihat Lokasi di Google Maps
+                    </strong>
+
                 </div>
 
-                <button onclick="pesan('Tahu Bakso')">
-                    Pesan
-                </button>
+            </a>
 
-            </div>
-        </div>
+        </section>
 
-
-        <div class="product-card">
-            <img src="images/pempek.jpg" alt="Pempek Ikan Tenggiri">
-
-            <div class="product-content">
-
-                <h3>Pempek Tenggiri</h3>
-
-                <p>Pempek ikan tenggiri.</p>
-
-                <label>Pilih ukuran</label>
-
-                <select onchange="ubahHarga(this)">
-                    <option value="25000">Per box</option>
-                    <option value="55000">500 gram</option>
-                    <option value="110000">1 kg</option>
-                </select>
-
-                <div class="price">
-                    Rp25.000
-                </div>
-
-                <button onclick="pesan('Pempek Ikan Tenggiri')">
-                    Pesan
-                </button>
-
-            </div>
-        </div>
+    </main>
 
 
-        <div class="product-card">
-            <img src="images/cilok.jpg" alt="Cilok">
 
-            <div class="product-content">
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
-                <h3>Cilok</h3>
+    <footer class="footer">
 
-                <p>Cilok frozen.</p>
+        <p>
+            © 2026 Cireng Indi
+        </p>
 
-                <label>Pilih ukuran</label>
+        <p>
+            Frozen Food & Jamu Rumahan
+        </p>
 
-                <select onchange="ubahHarga(this)">
-                    <option value="30000">520 gram</option>
-                    <option value="55000">1 kg</option>
-                </select>
+    </footer>
 
-                <div class="price">
-                    Rp30.000
-                </div>
-
-                <button onclick="pesan('Cilok')">
-                    Pesan
-                </button>
-
-            </div>
-        </div>
-
-
-        <div class="product-card">
-            <img src="images/bola-ayam-keju.jpg" alt="Bola Ayam Keju">
-
-            <div class="product-content">
-
-                <h3>Bola Ayam Keju</h3>
-
-                <p>1 box isi 10.</p>
-
-                <div class="price">
-                    Rp40.000
-                </div>
-
-                <button onclick="pesan('Bola Ayam Keju')">
-                    Pesan
-                </button>
-
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- KONTAK -->
-<section id="kontak" class="section kontak">
-
-    <h2>Kontak Kami</h2>
-
-    <p>Pesan produk Cireng Indi melalui WhatsApp.</p>
-
-    <a
-        class="contact-button"
-        href="https://wa.me/628XXXXXXXXXX"
-        target="_blank"
-    >
-        Hubungi WhatsApp
-    </a>
-
-</section>
-
-</main>
-
-
-<!-- JAVASCRIPT -->
-<script>
-
-function ubahHarga(select) {
-
-    const card = select.closest(".product-card");
-    const harga = select.value;
-
-    const price = card.querySelector(".price");
-
-    price.textContent =
-        "Rp" + Number(harga).toLocaleString("id-ID");
-
-}
-
-
-function pesan(namaProduk) {
-
-    const nomor = "628XXXXXXXXXX";
-
-    const pesan =
-        "Halo Cireng Indi, saya ingin pesan " +
-        namaProduk;
-
-    const url =
-        "https://wa.me/" +
-        nomor +
-        "?text=" +
-        encodeURIComponent(pesan);
-
-    window.open(url, "_blank");
-
-}
-
-</script>
 
 </body>
+
 </html>
