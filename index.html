@@ -4,17 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Cireng Indi</title>
+  <title>Cireng Indi | Frozen Food Rumahan</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================
-       RESET
-    ========================= */
+    :root {
+      --red: #e60000;
+      --red-dark: #b80000;
+      --yellow: #ffd21c;
+      --white: #ffffff;
+      --black: #222222;
+      --soft: #fff8df;
+    }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -22,336 +33,249 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #222;
-      overflow-x: hidden;
+      font-family: "DM Sans", sans-serif;
+      background: #ffffff;
+      color: var(--black);
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
 
     /* =========================
-       WARNA
-    ========================= */
-
-    :root {
-      --red: #d90000;
-      --dark-red: #a80000;
-      --yellow: #ffd400;
-      --light-yellow: #fff5bd;
-      --white: #ffffff;
-      --dark: #211414;
-    }
-
-
-    /* =========================
-       HEADER MOBILE
+       HEADER
     ========================= */
 
     header {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
+      z-index: 1000;
+      background: var(--red);
+      box-shadow: 0 3px 15px rgba(0,0,0,.15);
+    }
 
-      width: 100%;
-      height: 68px;
-
-      padding: 0 18px;
+    .header-inner {
+      max-width: 520px;
+      margin: auto;
+      min-height: 72px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      background: var(--red);
-
-      z-index: 1000;
-
-      transition: 0.3s;
+      padding: 12px 18px;
     }
-
-
-    /* LOGO SEMENTARA */
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 9px;
+      gap: 10px;
 
+      text-decoration: none;
       color: white;
-      font-size: 18px;
-      font-weight: 800;
     }
 
-    .logo-icon {
-      width: 38px;
-      height: 38px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 50%;
-
-      background: var(--yellow);
-      color: var(--red);
-
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-
-    /* HAMBURGER */
-
-    .menu-button {
+    .logo-circle {
       width: 42px;
       height: 42px;
 
+      border-radius: 50%;
+      background: var(--yellow);
+
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 5px;
 
-      border: none;
-      border-radius: 8px;
-
-      background: var(--yellow);
-
-      cursor: pointer;
+      color: var(--red);
+      font-weight: 700;
+      font-size: 15px;
     }
 
-    .menu-button span {
-      width: 21px;
-      height: 2px;
-
-      background: var(--red);
+    .logo-text {
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      font-weight: 700;
     }
-
 
     /* =========================
-       MOBILE MENU
+       MENU
     ========================= */
 
-    .mobile-menu {
-      position: fixed;
+    nav {
+      max-width: 520px;
+      margin: auto;
 
-      top: 68px;
-      left: 0;
-
-      width: 100%;
-
-      background: var(--dark-red);
-
-      display: none;
-
-      flex-direction: column;
-
-      z-index: 999;
-    }
-
-    .mobile-menu.show {
       display: flex;
+      overflow-x: auto;
+
+      background: var(--red-dark);
+
+      scrollbar-width: none;
     }
 
-    .mobile-menu a {
-      padding: 17px 22px;
+    nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    nav a {
+      flex: 0 0 auto;
+
+      padding: 14px 16px;
 
       color: white;
+      text-decoration: none;
 
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 600;
 
-      border-bottom: 1px solid rgba(255,255,255,0.15);
+      transition: .2s;
     }
 
-    .mobile-menu a:active {
+    nav a:hover,
+    nav a.active {
+      color: var(--yellow);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      background:
+        linear-gradient(
+          160deg,
+          #f00000,
+          #c90000 65%,
+          #a90000
+        );
+
+      color: white;
+      padding: 35px 20px 55px;
+
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 520px;
+      margin: auto;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 270px;
+
+      border-radius: 22px;
+
+      object-fit: cover;
+
+      background: #eeeeee;
+
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 42px;
+      line-height: 1.05;
+
+      color: var(--yellow);
+
+      margin-bottom: 12px;
+    }
+
+    .hero h2 {
+      font-size: 21px;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      line-height: 1.7;
+      opacity: .95;
+
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+
       background: var(--yellow);
       color: var(--red);
+
+      padding: 13px 25px;
+
+      border-radius: 30px;
+
+      text-decoration: none;
+
+      font-weight: 700;
+
+      border: none;
+      cursor: pointer;
+
+      transition: .2s;
     }
 
+    .btn:active {
+      transform: scale(.96);
+    }
 
     /* =========================
        SECTION
     ========================= */
 
     section {
-      min-height: auto;
-
-      padding: 90px 20px 70px;
+      padding: 55px 18px;
     }
 
+    .section-inner {
+      max-width: 520px;
+      margin: auto;
+    }
 
-    /* =========================
-       BERANDA
-    ========================= */
-
-    #beranda {
-      min-height: 100vh;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding-top: 100px;
-
-      background:
-        linear-gradient(
-          160deg,
-          #d90000 0%,
-          #b50000 60%,
-          #8e0000 100%
-        );
-
-      color: white;
-
+    .section-title {
       text-align: center;
-    }
 
-    .hero {
-      width: 100%;
-    }
-
-
-    /* FOTO UTAMA SEMENTARA */
-
-    .hero-image {
-      width: 100%;
-      max-width: 360px;
-
-      height: 250px;
-
-      margin: 0 auto 30px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 20px;
-
-      background: #eee;
-
-      color: #888;
-
-      font-size: 16px;
-
-      overflow: hidden;
-    }
-
-
-    .hero h1 {
-      font-size: 52px;
-
-      line-height: 0.95;
-
-      color: var(--yellow);
-
-      margin-bottom: 15px;
-
-      font-weight: 900;
-    }
-
-    .hero h2 {
-      font-size: 24px;
-
-      line-height: 1.25;
-
-      margin-bottom: 18px;
-    }
-
-    .hero p {
-      font-size: 16px;
-
-      line-height: 1.7;
-
-      color: #fff1eb;
-    }
-
-
-    /* BUTTON UTAMA */
-
-    .main-button {
-      display: inline-block;
-
-      margin-top: 25px;
-
-      padding: 15px 28px;
-
-      border-radius: 30px;
-
-      background: var(--yellow);
+      font-family: "Playfair Display", serif;
+      font-size: 31px;
 
       color: var(--red);
 
-      font-size: 15px;
-      font-weight: 800;
+      margin-bottom: 12px;
     }
 
+    .section-subtitle {
+      text-align: center;
+
+      font-size: 14px;
+      line-height: 1.7;
+
+      color: #666;
+
+      margin-bottom: 30px;
+    }
 
     /* =========================
        TENTANG
     ========================= */
 
     #tentang {
-      background: var(--white);
+      background: #fffdf5;
     }
 
-    .section-container {
-      width: 100%;
-    }
-
-    .section-label {
-      margin-bottom: 10px;
-
-      color: var(--red);
-
-      font-size: 13px;
-      font-weight: 900;
-
-      letter-spacing: 2px;
-    }
-
-    .section-title {
-      margin-bottom: 25px;
-
-      color: var(--red);
-
-      font-size: 34px;
-
-      line-height: 1.1;
-    }
-
-    .about-card {
-      padding: 24px;
-
-      margin-bottom: 18px;
-
-      background: var(--light-yellow);
-
-      border-radius: 16px;
+    .about-box {
+      background: white;
 
       border-left: 5px solid var(--yellow);
+
+      padding: 22px;
+
+      border-radius: 0 15px 15px 0;
+
+      box-shadow: 0 8px 25px rgba(0,0,0,.06);
     }
 
-    .about-card h3 {
-      margin-bottom: 10px;
-
-      color: var(--red);
-
-      font-size: 20px;
-    }
-
-    .about-card p {
-      color: #555;
-
+    .about-box p {
       font-size: 15px;
-
-      line-height: 1.7;
+      line-height: 1.8;
+      color: #444;
     }
-
 
     /* =========================
        PRODUK
@@ -359,340 +283,357 @@
 
     #produk {
       background: var(--red);
-
       color: white;
     }
 
-    #produk .section-label {
+    #produk .section-title {
       color: var(--yellow);
     }
 
-    #produk .section-title {
-      color: var(--white);
+    #produk .section-subtitle {
+      color: rgba(255,255,255,.85);
     }
 
-    .product-list {
-      display: flex;
-      flex-direction: column;
-
-      gap: 20px;
+    .products {
+      display: grid;
+      gap: 22px;
     }
-
-
-    /* CARD PRODUK */
 
     .product-card {
-      overflow: hidden;
-
       background: white;
 
-      border-radius: 18px;
+      border-radius: 20px;
 
-      box-shadow:
-        0 8px 25px rgba(0,0,0,0.18);
+      overflow: hidden;
+
+      color: var(--black);
+
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
     }
-
-
-    /* FOTO PRODUK SEMENTARA */
 
     .product-image {
       width: 100%;
-      height: 220px;
+      height: 230px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      object-fit: cover;
 
       background: #eeeeee;
-
-      color: #888;
-
-      font-size: 15px;
     }
 
-
-    .product-info {
+    .product-content {
       padding: 20px;
     }
 
-    .product-info h3 {
-      margin-bottom: 8px;
+    .product-name {
+      font-family: "Playfair Display", serif;
+
+      font-size: 24px;
 
       color: var(--red);
 
-      font-size: 21px;
+      margin-bottom: 7px;
     }
 
-    .product-info p {
-      margin-bottom: 15px;
+    .product-description {
+      font-size: 13px;
+      line-height: 1.6;
 
       color: #666;
 
-      font-size: 14px;
-
-      line-height: 1.6;
+      margin-bottom: 18px;
     }
 
-    .product-price {
+    .product-label {
+      display: block;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      margin-bottom: 7px;
+    }
+
+    .weight-select {
+      width: 100%;
+
+      padding: 12px;
+
+      border: 1px solid #ddd;
+
+      border-radius: 10px;
+
+      background: white;
+
+      font-family: inherit;
+
+      font-size: 14px;
+
       margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: 700;
 
       color: var(--red);
 
-      font-size: 19px;
-      font-weight: 900;
+      margin-bottom: 15px;
     }
 
-    .order-button {
-      display: block;
-
+    .order-btn {
       width: 100%;
 
-      padding: 14px;
+      padding: 13px;
 
-      border-radius: 30px;
+      border: none;
+
+      border-radius: 10px;
+
+      background: var(--red);
+
+      color: white;
+
+      font-family: inherit;
+
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    /* =========================
+       KATEGORI LAIN
+    ========================= */
+
+    .category-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .category {
+      background: var(--soft);
+
+      border: 1px solid #f2dc65;
+
+      padding: 20px 12px;
+
+      text-align: center;
+
+      border-radius: 15px;
+
+      font-family: "Playfair Display", serif;
+
+      color: var(--red);
+    }
+
+    /* =========================
+       KONTAK
+    ========================= */
+
+    #kontak {
+      background: #fffdf5;
+    }
+
+    .contact-card {
+      background: var(--red);
+
+      color: white;
+
+      border-radius: 20px;
+
+      padding: 25px;
+
+      text-align: center;
+    }
+
+    .contact-card h3 {
+      font-family: "Playfair Display", serif;
+
+      color: var(--yellow);
+
+      font-size: 27px;
+
+      margin-bottom: 15px;
+    }
+
+    .contact-card p {
+      font-size: 14px;
+      line-height: 1.7;
+
+      margin-bottom: 20px;
+    }
+
+    .contact-buttons {
+      display: grid;
+      gap: 10px;
+    }
+
+    .contact-btn {
+      display: block;
+
+      padding: 13px;
 
       background: var(--yellow);
 
       color: var(--red);
 
-      text-align: center;
+      border-radius: 10px;
 
-      font-size: 15px;
-      font-weight: 900;
+      text-decoration: none;
+
+      font-weight: 700;
     }
-
-
-    /* =========================
-       LOKASI
-    ========================= */
-
-    #kontak {
-      background: var(--light-yellow);
-    }
-
-    .contact-card {
-      padding: 25px;
-
-      background: white;
-
-      border-radius: 18px;
-
-      box-shadow:
-        0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .contact-card h3 {
-      margin-bottom: 15px;
-
-      color: var(--red);
-
-      font-size: 23px;
-    }
-
-    .contact-card p {
-      margin-bottom: 12px;
-
-      color: #555;
-
-      font-size: 15px;
-
-      line-height: 1.7;
-    }
-
-
-    /* GOOGLE MAPS SEMENTARA */
-
-    .maps-placeholder {
-      width: 100%;
-      height: 220px;
-
-      margin-top: 20px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 14px;
-
-      background: #eeeeee;
-
-      color: #888;
-
-      text-align: center;
-    }
-
 
     /* =========================
        FOOTER
     ========================= */
 
     footer {
-      padding: 35px 20px;
-
-      background: var(--dark-red);
+      background: #8f0000;
 
       color: white;
 
       text-align: center;
+
+      padding: 25px 18px;
+
+      font-size: 12px;
     }
-
-    footer h3 {
-      margin-bottom: 10px;
-
-      color: var(--yellow);
-
-      font-size: 22px;
-    }
-
-    footer p {
-      color: #ffdede;
-
-      font-size: 13px;
-
-      line-height: 1.6;
-    }
-
 
     /* =========================
        FLOATING BUTTON
     ========================= */
 
-    .floating-buttons {
+    .floating {
       position: fixed;
 
-      right: 15px;
+      right: 16px;
       bottom: 18px;
+
+      z-index: 999;
 
       display: flex;
       flex-direction: column;
-
       gap: 10px;
-
-      z-index: 900;
     }
 
-    .floating-button {
-      width: 48px;
-      height: 48px;
+    .float-btn {
+      width: 50px;
+      height: 50px;
+
+      border-radius: 50%;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      border-radius: 50%;
+      text-decoration: none;
 
-      background: var(--yellow);
+      font-size: 12px;
+      font-weight: 700;
 
-      color: var(--red);
-
-      font-size: 13px;
-      font-weight: 900;
-
-      box-shadow:
-        0 5px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 5px 15px rgba(0,0,0,.2);
     }
 
+    .wa {
+      background: #25D366;
+      color: white;
+    }
+
+    .ig {
+      background: var(--yellow);
+      color: var(--red);
+    }
 
     /* =========================
-       LAYAR LEBIH BESAR
-       TETAP MENGIKUTI DESAIN HP
+       DESKTOP
+       Tetap dibatasi seperti
+       tampilan mobile
     ========================= */
 
-    @media (min-width: 600px) {
-
+    @media (min-width: 700px) {
       body {
-        max-width: 430px;
+        background: #eeeeee;
+      }
 
+      .site {
+        width: 520px;
+        max-width: 100%;
         margin: auto;
-
-        box-shadow:
-          0 0 30px rgba(0,0,0,0.12);
+        background: white;
+        min-height: 100vh;
       }
 
-      header {
-        max-width: 430px;
-
-        left: 50%;
-
-        transform: translateX(-50%);
-      }
-
-      .mobile-menu {
-        max-width: 430px;
-
-        left: 50%;
-
-        transform: translateX(-50%);
+      .floating {
+        right: calc(50% - 290px);
       }
     }
-
   </style>
 </head>
 
-
 <body>
 
+<div class="site">
 
-  <!-- =========================
-       HEADER
-  ========================= -->
+  <!-- HEADER -->
 
-  <header id="header">
+  <header>
+    <div class="header-inner">
 
-    <a href="#beranda" class="logo">
+      <a href="#beranda" class="logo">
 
-      <div class="logo-icon">
-        CI
-      </div>
+        <div class="logo-circle">
+          CI
+        </div>
 
-      <span>Cireng Indi</span>
+        <div class="logo-text">
+          Cireng Indi
+        </div>
 
-    </a>
+      </a>
 
+    </div>
 
-    <button
-      class="menu-button"
-      id="menuButton"
-      aria-label="Buka menu"
-    >
+    <nav>
 
-      <span></span>
-      <span></span>
-      <span></span>
+      <a href="#tentang">
+        Tentang Kami
+      </a>
 
-    </button>
+      <a href="#cireng">
+        Cireng
+      </a>
 
+      <a href="#jamu">
+        Jamu
+      </a>
+
+      <a href="#nugget">
+        Nugget
+      </a>
+
+      <a href="#lainnya">
+        Lainnya
+      </a>
+
+      <a href="#kontak">
+        Kontak Kami
+      </a>
+
+    </nav>
   </header>
 
 
-  <!-- =========================
-       MOBILE MENU
-  ========================= -->
+  <!-- HERO -->
 
-  <nav class="mobile-menu" id="mobileMenu">
+  <section class="hero" id="beranda">
 
-    <a href="#beranda">Beranda</a>
+    <div class="hero-inner">
 
-    <a href="#tentang">Tentang Kami</a>
-
-    <a href="#produk">Produk Kami</a>
-
-    <a href="#kontak">Kontak</a>
-
-  </nav>
-
-
-  <!-- =========================
-       BERANDA
-  ========================= -->
-
-  <section id="beranda">
-
-    <div class="hero">
-
-      <div class="hero-image">
-        FOTO UTAMA
-      </div>
+      <!-- GANTI DENGAN FOTO UTAMA -->
+      <img
+        src="images/foto-utama.jpg"
+        class="hero-image"
+        alt="Cireng Indi">
 
       <h1>
         CIRENG<br>
@@ -704,12 +645,11 @@
       </h2>
 
       <p>
-        Produk frozen food rumahan
-        dengan bahan berkualitas
-        dan dibuat dengan hati.
+        Produk frozen food rumahan dengan
+        bahan berkualitas dan dibuat dengan hati.
       </p>
 
-      <a href="#produk" class="main-button">
+      <a href="#produk" class="btn">
         Lihat Produk
       </a>
 
@@ -718,63 +658,35 @@
   </section>
 
 
-  <!-- =========================
-       TENTANG KAMI
-  ========================= -->
+  <!-- TENTANG KAMI -->
 
   <section id="tentang">
 
-    <div class="section-container">
-
-      <p class="section-label">
-        TENTANG KAMI
-      </p>
+    <div class="section-inner">
 
       <h2 class="section-title">
-        Cerita Cireng Indi
+        Tentang Kami
       </h2>
 
+      <p class="section-subtitle">
+        Kenal lebih dekat dengan Cireng Indi
+      </p>
 
-      <div class="about-card">
-
-        <h3>
-          Sejak 2015
-        </h3>
+      <div class="about-box">
 
         <p>
-          Cireng Indi hadir sejak 2015 dengan
-          satu tujuan sederhana: menghadirkan
-          makanan berkualitas untuk pelanggan.
+          Cireng Indi merupakan usaha frozen food
+          rumahan yang menghadirkan berbagai produk
+          makanan dengan bahan pilihan dan rasa yang
+          dibuat untuk dinikmati bersama keluarga.
         </p>
 
-      </div>
-
-
-      <div class="about-card">
-
-        <h3>
-          Terus Berinovasi
-        </h3>
+        <br>
 
         <p>
-          Tidak hanya cireng, Cireng Indi juga
-          mengembangkan berbagai pilihan
-          frozen food rumahan.
-        </p>
-
-      </div>
-
-
-      <div class="about-card">
-
-        <h3>
-          Dibuat dengan Hati
-        </h3>
-
-        <p>
-          Kami percaya makanan rumahan yang
-          dibuat dengan hati akan memiliki
-          tempat di hati pelanggan.
+          Kami mengutamakan kualitas bahan,
+          kebersihan proses produksi, dan rasa
+          yang konsisten pada setiap produk.
         </p>
 
       </div>
@@ -784,168 +696,198 @@
   </section>
 
 
-  <!-- =========================
-       PRODUK
-  ========================= -->
+  <!-- PRODUK CIRENG -->
 
   <section id="produk">
 
-    <div class="section-container">
+    <div class="section-inner">
 
-      <p class="section-label">
-        PRODUK KAMI
-      </p>
-
-      <h2 class="section-title">
-        Pilihan Produk
+      <h2 class="section-title" id="cireng">
+        Cireng
       </h2>
 
+      <p class="section-subtitle">
+        Pilih produk dan ukuran yang kamu inginkan.
+      </p>
 
-      <div class="product-list">
+      <div class="products">
 
 
         <!-- PRODUK 1 -->
 
-        <article class="product-card">
+        <div class="product-card">
 
-          <div class="product-image">
-            FOTO PRODUK
-          </div>
+          <img
+            src="images/cireng-original.jpg"
+            class="product-image"
+            alt="Cireng Original">
 
-          <div class="product-info">
+          <div class="product-content">
 
-            <h3>
-              Cireng
+            <h3 class="product-name">
+              Cireng Original
             </h3>
 
-            <p>
+            <p class="product-description">
               Cireng frozen dengan rasa gurih
-              dan tekstur yang nikmat.
+              dan tekstur khas Cireng Indi.
             </p>
 
-            <div class="product-price">
-              Mulai Rp30.000
+            <label class="product-label">
+              Pilih ukuran
+            </label>
+
+            <select
+              class="weight-select"
+              data-price="35000"
+              onchange="changePrice(this)"
+            >
+
+              <option value="250g" data-price="25000">
+                250 gram
+              </option>
+
+              <option value="500g" data-price="35000">
+                500 gram
+              </option>
+
+              <option value="1kg" data-price="65000">
+                1 kilogram
+              </option>
+
+            </select>
+
+            <div class="price">
+              Rp25.000
             </div>
 
-            <a href="#" class="order-button">
+            <button
+              class="order-btn"
+              onclick="orderProduct(this)"
+            >
               Pesan Sekarang
-            </a>
+            </button>
 
           </div>
 
-        </article>
+        </div>
 
 
         <!-- PRODUK 2 -->
 
-        <article class="product-card">
+        <div class="product-card">
 
-          <div class="product-image">
-            FOTO PRODUK
-          </div>
+          <img
+            src="images/cireng-ayam.jpg"
+            class="product-image"
+            alt="Cireng Ayam">
 
-          <div class="product-info">
+          <div class="product-content">
 
-            <h3>
-              Chicken Katsu
+            <h3 class="product-name">
+              Cireng Ayam
             </h3>
 
-            <p>
-              Chicken katsu frozen untuk stok
-              makanan di rumah.
+            <p class="product-description">
+              Cireng dengan isian ayam yang
+              gurih dan cocok untuk camilan.
             </p>
 
-            <div class="product-price">
-              Mulai Rp28.000
+            <label class="product-label">
+              Pilih ukuran
+            </label>
+
+            <select
+              class="weight-select"
+              onchange="changePrice(this)"
+            >
+
+              <option value="250g" data-price="30000">
+                250 gram
+              </option>
+
+              <option value="500g" data-price="45000">
+                500 gram
+              </option>
+
+              <option value="1kg" data-price="80000">
+                1 kilogram
+              </option>
+
+            </select>
+
+            <div class="price">
+              Rp30.000
             </div>
 
-            <a href="#" class="order-button">
+            <button
+              class="order-btn"
+              onclick="orderProduct(this)"
+            >
               Pesan Sekarang
-            </a>
+            </button>
 
           </div>
 
-        </article>
+        </div>
 
 
         <!-- PRODUK 3 -->
 
-        <article class="product-card">
+        <div class="product-card">
 
-          <div class="product-image">
-            FOTO PRODUK
-          </div>
+          <img
+            src="images/cireng-isi.jpg"
+            class="product-image"
+            alt="Cireng Isi">
 
-          <div class="product-info">
+          <div class="product-content">
 
-            <h3>
-              Nugget Ayam
+            <h3 class="product-name">
+              Cireng Isi
             </h3>
 
-            <p>
-              Nugget ayam frozen yang praktis
-              untuk keluarga.
+            <p class="product-description">
+              Pilihan cireng isi dengan berbagai
+              varian rasa.
             </p>
 
-            <div class="product-price">
-              Mulai Rp30.000
+            <label class="product-label">
+              Pilih ukuran
+            </label>
+
+            <select
+              class="weight-select"
+              onchange="changePrice(this)"
+            >
+
+              <option value="250g" data-price="30000">
+                250 gram
+              </option>
+
+              <option value="500g" data-price="45000">
+                500 gram
+              </option>
+
+              <option value="1kg" data-price="80000">
+                1 kilogram
+              </option>
+
+            </select>
+
+            <div class="price">
+              Rp30.000
             </div>
 
-            <a href="#" class="order-button">
+            <button
+              class="order-btn"
+              onclick="orderProduct(this)"
+            >
               Pesan Sekarang
-            </a>
+            </button>
 
           </div>
 
-        </article>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       KONTAK
-  ========================= -->
-
-  <section id="kontak">
-
-    <div class="section-container">
-
-      <p class="section-label">
-        KONTAK
-      </p>
-
-      <h2 class="section-title">
-        Temukan Kami
-      </h2>
-
-
-      <div class="contact-card">
-
-        <h3>
-          Cireng Indi
-        </h3>
-
-        <p>
-          Jl. Piere Tendean / Pabrik Piring,
-          Gg. Sepakat Nusa Indah 4
-        </p>
-
-        <p>
-          Buka setiap hari
-          <br>
-          10.00 - 19.30
-        </p>
-
-
-        <div class="maps-placeholder">
-          FOTO GOOGLE MAPS
-          <br>
-          Klik untuk membuka lokasi
         </div>
 
       </div>
@@ -955,114 +897,267 @@
   </section>
 
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
+  <!-- JAMU -->
+
+  <section id="jamu">
+
+    <div class="section-inner">
+
+      <h2 class="section-title">
+        Jamu
+      </h2>
+
+      <p class="section-subtitle">
+        Pilihan jamu rumahan.
+      </p>
+
+      <div class="category-list">
+
+        <div class="category">
+          Jamu Kunyit
+        </div>
+
+        <div class="category">
+          Jamu Beras Kencur
+        </div>
+
+        <div class="category">
+          Jamu Temulawak
+        </div>
+
+        <div class="category">
+          Jamu Herbal
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- NUGGET -->
+
+  <section id="nugget" style="background:#fff8df;">
+
+    <div class="section-inner">
+
+      <h2 class="section-title">
+        Nugget
+      </h2>
+
+      <p class="section-subtitle">
+        Pilihan nugget frozen food.
+      </p>
+
+      <div class="category-list">
+
+        <div class="category">
+          Nugget Ayam
+        </div>
+
+        <div class="category">
+          Nugget Crispy
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUK LAINNYA -->
+
+  <section id="lainnya">
+
+    <div class="section-inner">
+
+      <h2 class="section-title">
+        Produk Lainnya
+      </h2>
+
+      <p class="section-subtitle">
+        Produk frozen food lainnya dari Cireng Indi.
+      </p>
+
+      <div class="category-list">
+
+        <div class="category">
+          Pempek
+        </div>
+
+        <div class="category">
+          Risoles
+        </div>
+
+        <div class="category">
+          Dimsum
+        </div>
+
+        <div class="category">
+          Frozen Food
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- KONTAK -->
+
+  <section id="kontak">
+
+    <div class="section-inner">
+
+      <h2 class="section-title">
+        Kontak Kami
+      </h2>
+
+      <div class="contact-card">
+
+        <h3>
+          Cireng Indi
+        </h3>
+
+        <p>
+          Pesanan dan informasi produk
+          dapat menghubungi kami melalui
+          WhatsApp atau Instagram.
+        </p>
+
+        <div class="contact-buttons">
+
+          <a
+            href="https://wa.me/628XXXXXXXXXX"
+            class="contact-btn"
+          >
+            Pesan via WhatsApp
+          </a>
+
+          <a
+            href="https://instagram.com/"
+            class="contact-btn"
+          >
+            Instagram
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
 
   <footer>
-
-    <h3>
-      Cireng Indi
-    </h3>
-
-    <p>
-      Frozen Food Rumahan sejak 2015.
-    </p>
-
-    <p>
-      © 2026 Cireng Indi
-    </p>
-
+    © 2026 Cireng Indi
   </footer>
 
 
-  <!-- =========================
-       FLOATING BUTTON
-  ========================= -->
+  <!-- FLOATING BUTTON -->
 
-  <div class="floating-buttons">
+  <div class="floating">
 
     <a
-      href="#"
-      class="floating-button"
+      href="https://wa.me/628XXXXXXXXXX"
+      class="float-btn wa"
     >
       WA
     </a>
 
     <a
-      href="#"
-      class="floating-button"
+      href="https://instagram.com/"
+      class="float-btn ig"
     >
       IG
     </a>
 
   </div>
 
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
-  <script>
-
-    const menuButton =
-      document.getElementById("menuButton");
-
-    const mobileMenu =
-      document.getElementById("mobileMenu");
-
-    const header =
-      document.getElementById("header");
-
-    const menuLinks =
-      document.querySelectorAll(".mobile-menu a");
+</div>
 
 
-    /* BUKA / TUTUP MENU */
+<script>
 
-    menuButton.addEventListener("click", () => {
+  /*
+    ==========================
+    GANTI NOMOR WHATSAPP DI SINI
+    ==========================
+  */
 
-      mobileMenu.classList.toggle("show");
-
-    });
-
-
-    /* TUTUP MENU SETELAH MEMILIH HALAMAN */
-
-    menuLinks.forEach(link => {
-
-      link.addEventListener("click", () => {
-
-        mobileMenu.classList.remove("show");
-
-      });
-
-    });
+  const nomorWhatsApp = "628XXXXXXXXXX";
 
 
-    /* UBAH WARNA HEADER SAAT SCROLL */
+  /*
+    UBAH HARGA SESUAI UKURAN
+  */
 
-    window.addEventListener("scroll", () => {
+  function changePrice(select) {
 
-      const posisi =
-        window.scrollY;
+    const card = select.closest(".product-card");
 
-      if (posisi > 500) {
+    const price = select.options[
+      select.selectedIndex
+    ].dataset.price;
 
-        header.style.background =
-          "#a80000";
+    const priceElement =
+      card.querySelector(".price");
 
-      } else {
+    priceElement.textContent =
+      "Rp" + Number(price).toLocaleString("id-ID");
 
-        header.style.background =
-          "#d90000";
+  }
 
-      }
 
-    });
+  /*
+    PESAN PRODUK
+  */
 
-  </script>
+  function orderProduct(button) {
 
+    const card =
+      button.closest(".product-card");
+
+    const product =
+      card.querySelector(".product-name").textContent.trim();
+
+    const select =
+      card.querySelector(".weight-select");
+
+    const ukuran =
+      select.value;
+
+    const price =
+      select.options[
+        select.selectedIndex
+      ].dataset.price;
+
+    const pesan =
+      `Halo Cireng Indi, saya ingin pesan:
+
+Produk: ${product}
+Ukuran: ${ukuran}
+Harga: Rp${Number(price).toLocaleString("id-ID")}
+
+Mohon informasi untuk pemesanannya.`;
+
+    const url =
+      "https://wa.me/" +
+      nomorWhatsApp +
+      "?text=" +
+      encodeURIComponent(pesan);
+
+    window.open(url, "_blank");
+
+  }
+
+</script>
 
 </body>
 </html>
